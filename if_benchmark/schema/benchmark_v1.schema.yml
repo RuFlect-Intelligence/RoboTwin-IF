@@ -1,0 +1,3909 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://robotwin.local/if_benchmark/benchmark_v1.schema.yml
+title: BenchmarkV1 Milestone 6 Contract Schema
+description: Canonical object model contracts for BenchmarkV1 pipeline artifacts.
+schema_version: 1
+type: object
+required:
+- schema_version
+- kind
+properties:
+  schema_version:
+    const: 1
+  kind:
+    enum:
+    - abstract_family
+    - axis_plan
+    - archetype
+    - role_graph
+    - constraint
+    - variant_schema
+    - assignment_candidate
+    - realized_scene_family
+    - scene_spec
+    - concrete_goal
+    - goal_variant
+    - task_record
+    - minimal_pair
+    - axis_contrast_set
+    - scene_validation_record
+  abstract_family:
+    $ref: '#/$defs/AbstractSceneFamily'
+  axis_plan:
+    $ref: '#/$defs/AxisPlan'
+  archetype:
+    $ref: '#/$defs/Archetype'
+  role_graph:
+    $ref: '#/$defs/RoleGraph'
+  constraint:
+    $ref: '#/$defs/Constraint'
+  variant_schema:
+    $ref: '#/$defs/VariantSchema'
+  assignment_candidate:
+    $ref: '#/$defs/AssignmentCandidate'
+  realized_scene_family:
+    $ref: '#/$defs/RealizedSceneFamily'
+  scene_spec:
+    $ref: '#/$defs/SceneSpec'
+  concrete_goal:
+    $ref: '#/$defs/ConcreteGoalDocument'
+  goal_variant:
+    $ref: '#/$defs/GoalVariant'
+  task_record:
+    $ref: '#/$defs/TaskRecord'
+  minimal_pair:
+    $ref: '#/$defs/ValidatedMinimalPair'
+  axis_contrast_set:
+    $ref: '#/$defs/AxisContrastSet'
+  scene_validation_record:
+    $ref: '#/$defs/SceneValidationRecord'
+additionalProperties: false
+oneOf:
+- properties:
+    kind:
+      const: abstract_family
+  required:
+  - kind
+  - abstract_family
+  not:
+    anyOf:
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: axis_plan
+  required:
+  - kind
+  - axis_plan
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: archetype
+  required:
+  - kind
+  - archetype
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: role_graph
+  required:
+  - kind
+  - role_graph
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: constraint
+  required:
+  - kind
+  - constraint
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: variant_schema
+  required:
+  - kind
+  - variant_schema
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: assignment_candidate
+  required:
+  - kind
+  - assignment_candidate
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: realized_scene_family
+  required:
+  - kind
+  - realized_scene_family
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: scene_spec
+  required:
+  - kind
+  - scene_spec
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: concrete_goal
+  required:
+  - kind
+  - concrete_goal
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: goal_variant
+  required:
+  - kind
+  - goal_variant
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: task_record
+  required:
+  - kind
+  - task_record
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: minimal_pair
+  required:
+  - kind
+  - minimal_pair
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - axis_contrast_set
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: axis_contrast_set
+  required:
+  - kind
+  - axis_contrast_set
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - scene_validation_record
+- properties:
+    kind:
+      const: scene_validation_record
+  required:
+  - kind
+  - scene_validation_record
+  not:
+    anyOf:
+    - required:
+      - abstract_family
+    - required:
+      - axis_plan
+    - required:
+      - archetype
+    - required:
+      - role_graph
+    - required:
+      - constraint
+    - required:
+      - variant_schema
+    - required:
+      - assignment_candidate
+    - required:
+      - realized_scene_family
+    - required:
+      - scene_spec
+    - required:
+      - concrete_goal
+    - required:
+      - goal_variant
+    - required:
+      - task_record
+    - required:
+      - minimal_pair
+    - required:
+      - axis_contrast_set
+$defs:
+  Identifier: &id002
+    type: string
+    pattern: ^[A-Za-z][A-Za-z0-9_\-]*$
+  RoleId: &id001
+    type: string
+    pattern: ^[A-Za-z][A-Za-z0-9_]*$
+  EntityKey: &id004
+    type: string
+    pattern: ^obj_[A-Za-z0-9_]+$
+  ModelId: &id003
+    oneOf:
+    - type: string
+    - type: integer
+  AxisSpec: &id006
+    type: object
+    required:
+    - axis
+    properties:
+      axis:
+        enum:
+        - D1a
+        - D1b
+        - D1c
+        - D2a
+        - D2b
+        - D4
+      subtype:
+        type: string
+      role:
+        type: string
+      value: {}
+      values: {}
+    additionalProperties: false
+  AxisPlan:
+    type: array
+    minItems: 1
+    items:
+      $ref: '#/$defs/AxisSpec'
+  Role:
+    type: object
+    required:
+    - id
+    - kind
+    properties:
+      id: *id001
+      kind:
+        type: string
+      allowed_asset_roles:
+        type: array
+        items:
+          type: string
+      descriptor_role:
+        type: string
+      cardinality:
+        type: integer
+        minimum: 1
+      semantic_tags:
+        type: array
+        items:
+          type: string
+      required_uses:
+        type: array
+        items:
+          type: string
+      layout_role:
+        type: string
+    additionalProperties: false
+  Constraint:
+    type: object
+    required:
+    - id
+    - type
+    - scope
+    - phase
+    - roles
+    - params
+    - hard
+    properties:
+      id: *id002
+      type:
+        type: string
+      scope:
+        enum:
+        - semantic
+        - asset
+        - unit
+        - layout
+        - gate
+      phase:
+        enum:
+        - assignment
+        - unit_build
+        - layout
+        - gate
+        - manifest
+      roles:
+        type: array
+        items: *id001
+      params:
+        type: object
+      hard:
+        type: boolean
+      related_constraint: *id002
+    additionalProperties: false
+  ConstraintIndex:
+    type: object
+    required:
+    - by_phase
+    - by_scope
+    properties:
+      by_phase:
+        type: object
+        additionalProperties:
+          type: array
+          items: *id002
+      by_scope:
+        type: object
+        additionalProperties:
+          type: array
+          items: *id002
+    additionalProperties: false
+  Action:
+    type: object
+    required:
+    - verb
+    properties:
+      verb:
+        type: string
+        minLength: 1
+      family:
+        type: string
+        minLength: 1
+      arm:
+        type:
+        - string
+        - 'null'
+      relation:
+        type:
+        - string
+        - 'null'
+      state:
+        type:
+        - string
+        - 'null'
+    additionalProperties: false
+  DescriptorConstructor:
+    type: object
+    required:
+    - kind
+    properties:
+      kind:
+        enum:
+        - attribute
+        - spatial
+        - ordinal
+        - part
+      subtype:
+        type: string
+      basis:
+        type: string
+      order:
+        type: string
+      predicates:
+        type: array
+        items:
+          type: string
+      source_role: *id001
+      reference_role: *id001
+      params:
+        type: object
+    additionalProperties: false
+    allOf:
+    - if:
+        properties:
+          kind:
+            const: attribute
+      then:
+        required:
+        - subtype
+        - source_role
+        not:
+          anyOf:
+          - required:
+            - basis
+          - required:
+            - order
+          - required:
+            - predicates
+          - required:
+            - reference_role
+    - if:
+        properties:
+          kind:
+            const: spatial
+      then:
+        required:
+        - predicates
+        - source_role
+        - reference_role
+        properties:
+          predicates:
+            type: array
+            minItems: 1
+            uniqueItems: true
+            items:
+              type: string
+              minLength: 1
+        not:
+          anyOf:
+          - required:
+            - subtype
+          - required:
+            - basis
+          - required:
+            - order
+    - if:
+        properties:
+          kind:
+            const: ordinal
+      then:
+        required:
+        - basis
+        - order
+        - source_role
+        not:
+          anyOf:
+          - required:
+            - subtype
+          - required:
+            - predicates
+    - if:
+        properties:
+          kind:
+            const: part
+      then:
+        required:
+        - source_role
+        - params
+        properties:
+          params:
+            type: object
+            required:
+            - region
+            properties:
+              region:
+                type: string
+                minLength: 1
+              metadata:
+                type: object
+            additionalProperties: false
+        not:
+          anyOf:
+          - required:
+            - subtype
+          - required:
+            - basis
+          - required:
+            - order
+          - required:
+            - predicates
+          - required:
+            - reference_role
+  VariantSchema:
+    type: object
+    required:
+    - id
+    - action
+    - role_bindings
+    properties:
+      id: *id002
+      action:
+        $ref: '#/$defs/Action'
+      role_bindings:
+        type: object
+        minProperties: 1
+        propertyNames: *id002
+        additionalProperties: *id001
+      descriptors:
+        type: object
+        additionalProperties:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/$defs/DescriptorConstructor'
+      params:
+        type: object
+    additionalProperties: false
+  MinimalPairEdge:
+    type: object
+    required:
+    - from
+    - to
+    - axis
+    properties:
+      from: *id002
+      to: *id002
+      axis:
+        enum:
+        - D1a
+        - D1b
+        - D1c
+        - D2a
+        - D2b
+        - D4
+      subtype:
+        type: string
+      value: {}
+    additionalProperties: false
+  Archetype:
+    type: object
+    required:
+    - id
+    - roles
+    - constraints
+    - variant_schemas
+    - minimal_pair_edges
+    properties:
+      id: *id002
+      roles:
+        type: array
+        items:
+          $ref: '#/$defs/Role'
+      constraints:
+        type: array
+        items:
+          $ref: '#/$defs/Constraint'
+      constraint_index:
+        $ref: '#/$defs/ConstraintIndex'
+      variant_schemas:
+        type: array
+        items:
+          $ref: '#/$defs/VariantSchema'
+      minimal_pair_edges:
+        type: array
+        items:
+          $ref: '#/$defs/MinimalPairEdge'
+      merge_role:
+        type: boolean
+      provenance:
+        $ref: '#/$defs/Provenance'
+    additionalProperties: false
+  RoleGraph:
+    type: object
+    required:
+    - id
+    - roles
+    - constraints
+    - variant_schemas
+    - minimal_pair_edges
+    properties:
+      id: *id002
+      roles:
+        type: array
+        items:
+          $ref: '#/$defs/Role'
+      constraints:
+        type: array
+        items:
+          $ref: '#/$defs/Constraint'
+      constraint_index:
+        $ref: '#/$defs/ConstraintIndex'
+      variant_schemas:
+        type: array
+        items:
+          $ref: '#/$defs/VariantSchema'
+      minimal_pair_edges:
+        type: array
+        items:
+          $ref: '#/$defs/MinimalPairEdge'
+      provenance:
+        $ref: '#/$defs/Provenance'
+    additionalProperties: false
+  AbstractSceneFamily:
+    type: object
+    required:
+    - id
+    - axis_plan
+    - archetypes
+    - randomization
+    properties:
+      id: *id002
+      axis_plan:
+        $ref: '#/$defs/AxisPlan'
+      archetypes:
+        type: array
+        items: *id002
+      randomization:
+        type: object
+      role_graph_id: *id002
+      provenance:
+        $ref: '#/$defs/Provenance'
+    additionalProperties: false
+  AssetBinding:
+    type: object
+    required:
+    - asset
+    - model_id
+    - category
+    properties:
+      asset:
+        type: string
+      model_id: *id003
+      category:
+        type: string
+      roles:
+        type: array
+        items:
+          type: string
+    additionalProperties: false
+  ProvenFact:
+    type: object
+    required:
+    - constraint
+    - fact
+    properties:
+      constraint: *id002
+      fact:
+        type: string
+        minLength: 1
+      stage:
+        type: string
+      status:
+        type: string
+      metadata:
+        type: object
+    additionalProperties: false
+  EvidenceRef:
+    type: object
+    required:
+    - kind
+    properties:
+      kind:
+        type: string
+        minLength: 1
+      path:
+        type: string
+      record_id:
+        type: string
+      hash:
+        type: string
+      asset:
+        type: string
+      model_id: *id003
+      field:
+        type: string
+      use:
+        type: string
+      relation:
+        type: string
+      stage:
+        type: string
+      status:
+        type: string
+      metadata:
+        type: object
+    additionalProperties: false
+  ProvenanceSource:
+    type: object
+    required:
+    - kind
+    - hash
+    properties:
+      kind:
+        type: string
+        minLength: 1
+      hash:
+        type: string
+        minLength: 1
+      path:
+        type: string
+      record_id:
+        type: string
+      metadata:
+        type: object
+    additionalProperties: false
+  Provenance:
+    type: object
+    required:
+    - generator
+    - config_hash
+    - sources
+    properties:
+      generator:
+        type: string
+        minLength: 1
+      config_hash:
+        type: string
+        minLength: 1
+      sources:
+        type: array
+        items:
+          $ref: '#/$defs/ProvenanceSource'
+      metadata:
+        type: object
+    additionalProperties: false
+  AssignmentCandidate:
+    type: object
+    required:
+    - id
+    - abstract_family_id
+    - archetype_ids
+    - roles
+    - resolved_values
+    - proven_facts
+    - evidence_refs
+    - layout_requirements
+    - materialization_params
+    properties:
+      id: *id002
+      abstract_family_id: *id002
+      archetype_ids:
+        type: array
+        items: *id002
+      roles:
+        type: object
+        minProperties: 1
+        propertyNames: *id001
+        additionalProperties:
+          $ref: '#/$defs/AssetBinding'
+      resolved_values:
+        type: object
+        propertyNames: *id001
+      proven_facts:
+        type: array
+        items:
+          $ref: '#/$defs/ProvenFact'
+      evidence_refs:
+        type: array
+        items:
+          $ref: '#/$defs/EvidenceRef'
+      layout_requirements:
+        type: array
+        items:
+          type: object
+      materialization_params:
+        type: object
+      provenance:
+        $ref: '#/$defs/Provenance'
+    additionalProperties: false
+  AttributeDescriptor:
+    type: object
+    required:
+    - subtype
+    - value
+    properties:
+      subtype:
+        type: string
+      value:
+        type: string
+    additionalProperties: false
+  SpatialDescriptor:
+    type: object
+    required:
+    - predicates
+    - reference
+    properties:
+      predicates:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items:
+          type: string
+          minLength: 1
+      reference: *id004
+    additionalProperties: false
+  OrdinalDescriptor:
+    type: object
+    required:
+    - basis
+    - order
+    properties:
+      basis:
+        type: string
+      order:
+        type: string
+      reference: *id004
+    additionalProperties: false
+  PartDescriptor:
+    type: object
+    required:
+    - region
+    properties:
+      region:
+        type: string
+    additionalProperties: false
+  DescriptorBundle: &id005
+    type: object
+    minProperties: 1
+    properties:
+      attribute:
+        $ref: '#/$defs/AttributeDescriptor'
+      spatial:
+        $ref: '#/$defs/SpatialDescriptor'
+      ordinal:
+        $ref: '#/$defs/OrdinalDescriptor'
+      part:
+        $ref: '#/$defs/PartDescriptor'
+    additionalProperties: false
+  DescriptorSet:
+    type: object
+    properties:
+      subject: *id005
+      target: *id005
+      subject2: *id005
+      target2: *id005
+    additionalProperties: false
+  OrientationAdjustmentParams:
+    type: object
+    required:
+    - orientation_axis
+    - orientation_reference
+    - rotation_delta_deg
+    properties:
+      orientation_axis:
+        const: support_normal
+      orientation_reference:
+        const: initial_orientation
+      rotation_delta_deg:
+        type: integer
+        enum:
+        - -90
+        - -60
+        - -45
+        - -30
+        - 30
+        - 45
+        - 60
+        - 90
+    additionalProperties: false
+  ConcreteGoal:
+    type: object
+    required:
+    - verb
+    - subject
+    - descriptors
+    - params
+    properties:
+      verb:
+        type: string
+        minLength: 1
+      action_family:
+        type: string
+      relation:
+        type:
+        - string
+        - 'null'
+      state:
+        type:
+        - string
+        - 'null'
+      subject: *id004
+      arm:
+        type:
+        - string
+        - 'null'
+      target:
+        oneOf:
+        - *id004
+        - type: 'null'
+      subject2:
+        oneOf:
+        - *id004
+        - type: 'null'
+      target2:
+        oneOf:
+        - *id004
+        - type: 'null'
+      descriptors:
+        $ref: '#/$defs/DescriptorSet'
+      params:
+        type: object
+    additionalProperties: false
+    allOf:
+    - if:
+        properties:
+          verb:
+            const: adjust_orientation
+        required:
+        - verb
+      then:
+        required:
+        - action_family
+        - relation
+        - state
+        properties:
+          action_family:
+            const: A2O_state
+          relation:
+            type: 'null'
+          state:
+            const: orientation_adjusted
+          params:
+            $ref: '#/$defs/OrientationAdjustmentParams'
+  ConcreteGoalDocument:
+    type: object
+    required:
+    - entity_keys
+    - goal
+    properties:
+      entity_keys:
+        type: array
+        items: *id004
+      goal:
+        $ref: '#/$defs/ConcreteGoal'
+    additionalProperties: false
+  GoalVariant:
+    type: object
+    required:
+    - id
+    - schema_id
+    - assignment_id
+    - role_refs
+    - entity_refs
+    - intended_axes
+    - goal
+    - export
+    properties:
+      id: *id002
+      schema_id: *id002
+      assignment_id: *id002
+      role_refs:
+        type: object
+        minProperties: 1
+        propertyNames: *id002
+        additionalProperties: *id001
+      entity_refs:
+        type: object
+        minProperties: 1
+        propertyNames: *id002
+        additionalProperties: *id004
+      intended_axes:
+        type: array
+        items: *id006
+      goal:
+        $ref: '#/$defs/ConcreteGoal'
+      export:
+        type: object
+        required:
+        - variant
+        properties:
+          variant:
+            type: string
+        additionalProperties: true
+    additionalProperties: false
+  RoleBinding:
+    type: object
+    required:
+    - entity_key
+    - asset
+    - model_id
+    properties:
+      entity_key: *id004
+      asset:
+        type: string
+      model_id: *id003
+      category:
+        type: string
+    additionalProperties: false
+  SceneTemplate:
+    type: object
+    required:
+    - key
+    - role_ref
+    - asset
+    - model_candidates
+    - roles
+    properties:
+      key: *id004
+      role_ref: *id001
+      asset:
+        type: string
+      model_candidates:
+        type: array
+        items: *id003
+      roles:
+        type: array
+        items:
+          type: string
+    additionalProperties: false
+  RectFootprint:
+    type: object
+    required:
+    - shape
+    - frame
+    - center_xy
+    - half_extents_xy
+    - source
+    properties:
+      shape:
+        const: rect
+      frame:
+        const: unit_local
+      center_xy:
+        type: array
+        minItems: 2
+        maxItems: 2
+        items:
+          type: number
+      half_extents_xy:
+        type: array
+        minItems: 2
+        maxItems: 2
+        items:
+          type: number
+          exclusiveMinimum: 0
+      source:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  LocalPose:
+    type: object
+    required:
+    - translation_xyz
+    - q0_wxyz
+    - relative_yaw_deg
+    - placement_mode
+    dependentRequired:
+      initial_state_id:
+      - dynamic_mass_properties
+    properties:
+      translation_xyz:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+      q0_wxyz:
+        type: array
+        minItems: 4
+        maxItems: 4
+        items:
+          type: number
+      relative_yaw_deg:
+        type: number
+      placement_mode:
+        type: string
+        minLength: 1
+      yaw_policy:
+        $ref: '#/$defs/InitialPoseYawPolicy'
+      initial_state_id: *id002
+      initial_state_revision:
+        type: integer
+        minimum: 0
+      initial_state_revision_hash:
+        type: string
+        minLength: 1
+      geometry_hash:
+        type: string
+        minLength: 1
+      canonical_state_hash:
+        type: string
+        minLength: 1
+      assignment_state_revision:
+        $ref: '#/$defs/AssignmentStateRevision'
+      scale_xyz:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+          exclusiveMinimum: 0
+      origin_relative_bounds:
+        $ref: '#/$defs/OriginRelativeBounds'
+      support:
+        $ref: '#/$defs/InitialPoseSupport'
+      articulated_joint_state:
+        $ref: '#/$defs/ArticulatedInitialJointState'
+      dynamic_mass_properties:
+        $ref: '#/$defs/DynamicAssetMassProperties'
+    additionalProperties: false
+  Anchor:
+    type: array
+    minItems: 3
+    maxItems: 3
+    items:
+      type: number
+  OperationAnchor:
+    type: object
+    required:
+    - id
+    - kind
+    - point_index
+    - position_xyz_m
+    - source_field
+    - source_frame
+    - operation_eligible
+    - moves_with_active_joint
+    properties:
+      id:
+        type: string
+        minLength: 1
+      kind:
+        enum:
+        - grasp_contact
+        - functional
+        - orientation
+      point_index:
+        type: integer
+        minimum: 0
+      position_xyz_m:
+        $ref: '#/$defs/Anchor'
+      source_field:
+        type: string
+        minLength: 1
+      source_frame:
+        enum:
+        - actor_local
+        - link_local
+      base_link:
+        type: string
+        minLength: 1
+      operation_eligible:
+        type: boolean
+      moves_with_active_joint:
+        type: boolean
+      approach_direction_xyz:
+        $ref: '#/$defs/Anchor'
+      approach_class:
+        enum:
+        - top_down
+        - oblique_down
+        - horizontal
+        - upward
+    additionalProperties: false
+  OperationAnchorContract:
+    type: object
+    required:
+    - version
+    - projection_mode
+    - q0_wxyz
+    - scale_xyz
+    - operation_metadata_hash
+    - anchors
+    - contract_hash
+    - source
+    properties:
+      version:
+        type: string
+        minLength: 1
+      projection_mode:
+        enum:
+        - rigid_actor_local
+        - articulated_link_fk
+      q0_wxyz:
+        type: array
+        minItems: 4
+        maxItems: 4
+        items:
+          type: number
+      scale_xyz:
+        $ref: '#/$defs/Anchor'
+      operation_metadata_hash:
+        type: string
+        minLength: 1
+      contact_projection_hash:
+        type: string
+        minLength: 1
+      canonical_state_hash:
+        type: string
+        minLength: 1
+      articulated_joint_state_hash:
+        type: string
+        minLength: 1
+      articulated_qpos:
+        type: array
+        items:
+          type: number
+      active_joint_index:
+        type:
+        - integer
+        - 'null'
+        minimum: 0
+      urdf_sha256:
+        type: string
+        minLength: 1
+      anchors:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/OperationAnchor'
+      contract_hash:
+        type: string
+        minLength: 1
+      source:
+        type: object
+        required:
+        - asset
+        - model_id
+        - candidate_use
+        - metadata_path
+        - operation_metadata_hash
+        properties:
+          asset:
+            type: string
+            minLength: 1
+          model_id: *id003
+          candidate_use:
+            type: string
+            minLength: 1
+          metadata_path:
+            type: string
+            minLength: 1
+          metadata_sha256:
+            type: string
+            minLength: 1
+          operation_metadata_hash:
+            type: string
+            minLength: 1
+          urdf_path:
+            type: string
+            minLength: 1
+          urdf_sha256:
+            type: string
+            minLength: 1
+          canonical_state_hash:
+            type: string
+            minLength: 1
+          assignment_state_revision:
+            $ref: '#/$defs/AssignmentStateRevision'
+          contact_projection_hash:
+            type: string
+            minLength: 1
+          validated_canonical_evidence:
+            type: array
+            minItems: 1
+            items:
+              type: object
+              required:
+              - use
+              - evidence_id
+              - report_path
+              - report_hash
+              properties:
+                use:
+                  type: string
+                  minLength: 1
+                evidence_id:
+                  type: string
+                  minLength: 1
+                report_hash:
+                  type: string
+                  minLength: 1
+                report_path:
+                  type: string
+                  minLength: 1
+              additionalProperties: false
+          validated_contact_contracts:
+            type: array
+            minItems: 1
+            items:
+              type: object
+              required:
+              - use
+              - evidence_id
+              - report_path
+              - report_hash
+              - binding
+              properties:
+                use:
+                  type: string
+                  minLength: 1
+                evidence_id:
+                  type: string
+                  minLength: 1
+                report_hash:
+                  type: string
+                  minLength: 1
+                report_path:
+                  type: string
+                  minLength: 1
+                binding:
+                  type: object
+                validated_contact_ids:
+                  type: array
+                  minItems: 1
+                  uniqueItems: true
+                  items:
+                    type: integer
+                    minimum: 0
+                validated_contact_ids_by_arm:
+                  type: object
+                  properties:
+                    left:
+                      type: array
+                      minItems: 1
+                      uniqueItems: true
+                      items:
+                        type: integer
+                        minimum: 0
+                    right:
+                      type: array
+                      minItems: 1
+                      uniqueItems: true
+                      items:
+                        type: integer
+                        minimum: 0
+                  additionalProperties: false
+              additionalProperties: false
+          validated_articulation_executions:
+            type: array
+            minItems: 1
+            items:
+              type: object
+              required:
+              - use
+              - evidence_id
+              - report_path
+              - report_hash
+              - binding
+              properties:
+                use:
+                  type: string
+                  minLength: 1
+                evidence_id:
+                  type: string
+                  minLength: 1
+                report_hash:
+                  type: string
+                  minLength: 1
+                report_path:
+                  type: string
+                  minLength: 1
+                binding:
+                  type: object
+              additionalProperties: false
+          validated_touch_executions:
+            type: array
+            minItems: 1
+            items:
+              type: object
+              required:
+              - use
+              - evidence_id
+              - report_path
+              - report_hash
+              - binding
+              properties:
+                use:
+                  type: string
+                  minLength: 1
+                evidence_id:
+                  type: string
+                  minLength: 1
+                report_hash:
+                  type: string
+                  minLength: 1
+                report_path:
+                  type: string
+                  minLength: 1
+                binding:
+                  type: object
+              additionalProperties: false
+        additionalProperties: false
+    additionalProperties: false
+  LocalZBounds:
+    type: array
+    minItems: 2
+    maxItems: 2
+    items:
+      type: number
+  GuaranteedFact:
+    type: object
+    required:
+    - predicate
+    - subject
+    - relation
+    - source_constraint_ids
+    properties:
+      predicate:
+        enum:
+        - spatial
+        - terminal_region
+      subject: *id004
+      relation:
+        type: string
+        minLength: 1
+      reference: *id004
+      receivers:
+        type: array
+        minItems: 1
+        maxItems: 2
+        items: *id004
+      region_id: *id002
+      source_constraint_ids:
+        type: array
+        items: *id002
+    additionalProperties: false
+    allOf:
+    - if:
+        properties:
+          predicate:
+            const: spatial
+      then:
+        required:
+        - reference
+    - if:
+        properties:
+          predicate:
+            const: terminal_region
+      then:
+        required:
+        - receivers
+        - region_id
+  RigidM5TerminalPlacementRecipe:
+    type: object
+    required:
+    - clearance_m
+    - yaw_convention
+    - settle_policy
+    properties:
+      clearance_m:
+        type: number
+        minimum: 0
+      yaw_convention:
+        const: subject_yaw_minus_receiver_yaw
+      settle_policy:
+        const: m5_terminal_settle_v11_proportional_asset_mass_inertia
+    additionalProperties: false
+  ArticulatedM5TerminalPlacementRecipe:
+    type: object
+    required:
+    - recipe_id
+    - constructor
+    - clearance_m
+    - yaw_convention
+    - settle_policy
+    - receiver_state_profile_id
+    - receiver_state_profile_hash
+    - cavity_frame_link
+    - support_plane_z
+    - recipe_hash
+    properties:
+      recipe_id:
+        type: string
+        minLength: 1
+      constructor:
+        const: articulated_place_in_cavity_link
+      clearance_m:
+        type: number
+        minimum: 0
+      yaw_convention:
+        const: subject_yaw_minus_receiver_yaw
+      settle_policy:
+        const: m5_ar_v3_proportional_asset_mass_inertia
+      receiver_state_profile_id:
+        type: string
+        minLength: 1
+      receiver_state_profile_hash:
+        type: string
+        minLength: 1
+      cavity_frame_link:
+        type: string
+        minLength: 1
+      support_plane_z:
+        type: number
+      recipe_hash:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  M5TerminalPlacementRecipe:
+    oneOf:
+    - $ref: '#/$defs/RigidM5TerminalPlacementRecipe'
+    - $ref: '#/$defs/ArticulatedM5TerminalPlacementRecipe'
+  NonPairTerminalPlacementRecipe:
+    type: object
+    required:
+    - clearance_m
+    - policy
+    properties:
+      clearance_m:
+        type: number
+        minimum: 0
+      policy:
+        const: m11_non_pair_terminal_clearance_v1
+    additionalProperties: false
+  TerminalPlacementRecipe:
+    oneOf:
+    - $ref: '#/$defs/M5TerminalPlacementRecipe'
+    - $ref: '#/$defs/NonPairTerminalPlacementRecipe'
+  ReservedRegion:
+    type: object
+    required:
+    - id
+    - relation
+    - subject_key
+    - receiver_keys
+    - footprint
+    - support_clearance_m
+    - terminal_clearance_m
+    - pair_evidence_ids
+    - relative_yaw_deg
+    - usable_region
+    properties:
+      id: *id002
+      relation:
+        type: string
+        minLength: 1
+      subject_key: *id004
+      receiver_keys:
+        type: array
+        minItems: 1
+        maxItems: 2
+        items: *id004
+      footprint:
+        $ref: '#/$defs/RectFootprint'
+      support_clearance_m:
+        type: number
+        minimum: 0
+      terminal_clearance_m:
+        type: number
+        minimum: 0
+      placement_recipe:
+        $ref: '#/$defs/TerminalPlacementRecipe'
+      placement_recipe_source:
+        type: string
+        minLength: 1
+      pair_evidence_ids:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      relative_yaw_deg:
+        type: number
+      relation_distance_band_m:
+        oneOf:
+        - type: 'null'
+        - type: array
+          minItems: 2
+          maxItems: 2
+          items:
+            type: number
+            minimum: 0
+      relation_surface_gap_band_m:
+        oneOf:
+        - type: 'null'
+        - type: array
+          minItems: 2
+          maxItems: 2
+          items:
+            type: number
+            minimum: 0
+      reserved_surface_gap_m:
+        oneOf:
+        - type: 'null'
+        - type: number
+          minimum: 0
+      reserved_center_distance_m:
+        type: number
+        minimum: 0
+      usable_region:
+        oneOf:
+        - type: 'null'
+        - type: object
+          required:
+          - x
+          - y
+          - factor
+          - edge_clearance_m
+          - solver_policy_hash
+          properties:
+            x:
+              type: number
+              exclusiveMinimum: 0
+            y:
+              type: number
+              exclusiveMinimum: 0
+            factor:
+              type:
+              - number
+              - 'null'
+            edge_clearance_m:
+              type:
+              - number
+              - 'null'
+            solver_policy_hash:
+              type:
+              - string
+              - 'null'
+          additionalProperties: false
+    allOf:
+    - if:
+        properties:
+          relation:
+            enum:
+            - in
+            - 'on'
+            - stack
+      then:
+        required:
+        - placement_recipe
+        - placement_recipe_source
+        properties:
+          placement_recipe:
+            $ref: '#/$defs/M5TerminalPlacementRecipe'
+          placement_recipe_source:
+            enum:
+            - frozen_m5_projection
+            - deterministic_m5_report_v3_recipe_rebind_v2
+      else:
+        properties:
+          placement_recipe:
+            $ref: '#/$defs/NonPairTerminalPlacementRecipe'
+          placement_recipe_source:
+            const: relation_default
+    additionalProperties: false
+  Unit:
+    type: object
+    required:
+    - id
+    - type
+    - roles
+    - entity_keys
+    properties:
+      id: *id002
+      type:
+        enum:
+        - ObjectUnit
+        - LandmarkRelationUnit
+        - ReceiverReservationUnit
+      roles:
+        type: array
+        items: *id001
+      entity_keys:
+        type: array
+        items: *id004
+      params:
+        type: object
+    additionalProperties: false
+    allOf:
+    - if:
+        properties:
+          type:
+            const: ObjectUnit
+      then:
+        required:
+        - params
+        properties:
+          roles:
+            minItems: 1
+            maxItems: 1
+          entity_keys:
+            minItems: 1
+            maxItems: 1
+          params:
+            type: object
+            required:
+            - object_key
+            - footprint
+            - anchors
+            - local_pose
+            - local_z_bounds
+            - geometry_evidence
+            properties:
+              object_key: *id004
+              footprint:
+                $ref: '#/$defs/RectFootprint'
+              anchors:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/Anchor'
+              local_pose:
+                $ref: '#/$defs/LocalPose'
+              local_z_bounds:
+                $ref: '#/$defs/LocalZBounds'
+              geometry_evidence:
+                type: object
+              operation_sources: &id009
+                type: object
+                additionalProperties: &id007
+                  type: string
+                  pattern: ^[0-9a-f]{64}$
+              operation_spaces: &id010
+                type: object
+                propertyNames: *id004
+                additionalProperties:
+                  type: object
+                  required:
+                  - policy
+                  - geometry
+                  - geometry_identity
+                  - geometry_key
+                  - robots
+                  - robot_geometry_key
+                  - support_plane_z_m
+                  - subject_identity
+                  - content_hash
+                  properties:
+                    policy:
+                      type: object
+                    geometry:
+                      type: object
+                      required:
+                      - pieces
+                      - sources
+                      - contacts
+                      - quat_wxyz
+                      properties:
+                        pieces: &id008
+                          type: array
+                          minItems: 1
+                          items:
+                            type: array
+                            minItems: 4
+                            items:
+                              type: array
+                              minItems: 3
+                              maxItems: 3
+                              items:
+                                type: number
+                        sources:
+                          type: array
+                        contacts:
+                          type: object
+                        quat_wxyz:
+                          type: array
+                          minItems: 4
+                          maxItems: 4
+                          items:
+                            type: number
+                      additionalProperties: false
+                    geometry_identity:
+                      type: object
+                    geometry_key: *id007
+                    robots:
+                      type: object
+                      required:
+                      - left
+                      - right
+                      properties:
+                        left:
+                          type: object
+                        right:
+                          type: object
+                      additionalProperties: false
+                    robot_geometry_key: *id007
+                    support_plane_z_m:
+                      type: number
+                    subject_identity:
+                      type: object
+                    content_hash: *id007
+                  additionalProperties: false
+              operation_obstacles: &id011
+                type: object
+                propertyNames: *id004
+                additionalProperties:
+                  type: object
+                  required:
+                  - pieces
+                  - geometry_key
+                  - link_matrices
+                  properties:
+                    pieces: *id008
+                    geometry_key: *id007
+                    link_matrices:
+                      type: object
+                      additionalProperties:
+                        type: array
+                        minItems: 4
+                        maxItems: 4
+                        items:
+                          type: array
+                          minItems: 4
+                          maxItems: 4
+                          items:
+                            type: number
+                  additionalProperties: false
+              operation_spacing: &id012
+                type: object
+                required:
+                - policy
+                - original_gap_m
+                - gap_m
+                - proposal_branch
+                - proposal_branches_by_subject
+                - branch_count
+                - not_a_grasp_certificate
+                properties:
+                  policy:
+                    type: string
+                  original_gap_m:
+                    type: number
+                  gap_m:
+                    type: number
+                  proposal_branch:
+                    type: object
+                  proposal_branches_by_subject:
+                    type: object
+                  branch_count:
+                    type: integer
+                    minimum: 1
+                  not_a_grasp_certificate:
+                    const: true
+                additionalProperties: false
+              operation_anchors:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/OperationAnchorContract'
+            additionalProperties: false
+    - if:
+        properties:
+          type:
+            const: LandmarkRelationUnit
+      then:
+        required:
+        - params
+        properties:
+          roles:
+            minItems: 2
+          entity_keys:
+            minItems: 2
+          params:
+            type: object
+            required:
+            - landmark_key
+            - internal_layout
+            - member_footprints
+            - member_z_bounds
+            - footprint
+            - anchors
+            - guaranteed_facts
+            - geometry_evidence
+            - pair_evidence
+            properties:
+              landmark_key: *id004
+              internal_layout:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/LocalPose'
+              member_footprints:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/RectFootprint'
+              member_z_bounds:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/LocalZBounds'
+              footprint:
+                $ref: '#/$defs/RectFootprint'
+              anchors:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/Anchor'
+              guaranteed_facts:
+                type: array
+                items:
+                  $ref: '#/$defs/GuaranteedFact'
+              geometry_evidence:
+                type: object
+              pair_evidence:
+                type: array
+                items:
+                  type: object
+              operation_sources: *id009
+              operation_spaces: *id010
+              operation_obstacles: *id011
+              operation_spacing: *id012
+              operation_anchors:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/OperationAnchorContract'
+            additionalProperties: false
+    - if:
+        properties:
+          type:
+            const: ReceiverReservationUnit
+      then:
+        required:
+        - params
+        properties:
+          roles:
+            minItems: 1
+          entity_keys:
+            minItems: 1
+          params:
+            type: object
+            required:
+            - receiver_keys
+            - subject_keys
+            - relations
+            - receiver_layout
+            - receiver_footprints
+            - receiver_z_bounds
+            - reserved_regions
+            - footprint
+            - anchors
+            - guaranteed_facts
+            - geometry_evidence
+            - subject_geometry_evidence
+            - subject_z_bounds
+            - pair_evidence
+            properties:
+              receiver_keys:
+                type: array
+                minItems: 1
+                maxItems: 2
+                items: *id004
+              subject_keys:
+                type: array
+                minItems: 1
+                items: *id004
+              relations:
+                type: array
+                minItems: 1
+                items:
+                  type: string
+                  minLength: 1
+              receiver_layout:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/LocalPose'
+              receiver_footprints:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/RectFootprint'
+              receiver_z_bounds:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/LocalZBounds'
+              reserved_regions:
+                type: array
+                minItems: 1
+                items:
+                  $ref: '#/$defs/ReservedRegion'
+              footprint:
+                $ref: '#/$defs/RectFootprint'
+              anchors:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/Anchor'
+              guaranteed_facts:
+                type: array
+                items:
+                  $ref: '#/$defs/GuaranteedFact'
+              geometry_evidence:
+                type: object
+              subject_geometry_evidence:
+                type: object
+              subject_z_bounds:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/LocalZBounds'
+              pair_evidence:
+                type: array
+                items:
+                  type: object
+              operation_sources: *id009
+              operation_spaces: *id010
+              operation_obstacles: *id011
+              operation_spacing: *id012
+              operation_anchors:
+                type: object
+                additionalProperties:
+                  $ref: '#/$defs/OperationAnchorContract'
+            additionalProperties: false
+  UnitInput:
+    type: object
+    required:
+    - id
+    - type
+    - roles
+    - entity_keys
+    - source_constraints
+    - geometry_refs
+    - pair_preconditions
+    - params
+    properties:
+      id: *id002
+      type:
+        enum:
+        - ObjectUnit
+        - LandmarkRelationUnit
+        - ReceiverReservationUnit
+      roles:
+        type: array
+        minItems: 1
+        items: *id001
+      entity_keys:
+        type: array
+        minItems: 1
+        items: *id004
+      source_constraints:
+        type: array
+        items: *id002
+      geometry_refs:
+        type: object
+        propertyNames: *id001
+        additionalProperties:
+          type: string
+          minLength: 1
+      initial_state_refs:
+        type: object
+        propertyNames: *id001
+        additionalProperties:
+          $ref: '#/$defs/CanonicalInitialState'
+      pair_preconditions:
+        type: object
+      params:
+        type: object
+    additionalProperties: false
+  RealizedSceneFamily:
+    type: object
+    required:
+    - id
+    - abstract_family_id
+    - assignment_id
+    - archetype_ids
+    - role_bindings
+    - templates
+    - goal_variants
+    - unit_inputs
+    - units
+    - layout_constraints
+    - minimal_pair_edges
+    - evidence
+    - export
+    properties:
+      id: *id002
+      abstract_family_id: *id002
+      assignment_id: *id002
+      archetype_ids:
+        type: array
+        items: *id002
+      role_bindings:
+        type: object
+        minProperties: 1
+        propertyNames: *id001
+        additionalProperties:
+          $ref: '#/$defs/RoleBinding'
+      templates:
+        type: array
+        items:
+          $ref: '#/$defs/SceneTemplate'
+      goal_variants:
+        type: array
+        items:
+          $ref: '#/$defs/GoalVariant'
+      unit_inputs:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/UnitInput'
+      units:
+        type: array
+        items:
+          $ref: '#/$defs/Unit'
+      layout_constraints:
+        type: array
+        items:
+          $ref: '#/$defs/Constraint'
+      minimal_pair_edges:
+        type: array
+        items:
+          $ref: '#/$defs/MinimalPairEdge'
+      evidence:
+        type: object
+      export:
+        type: object
+      provenance:
+        $ref: '#/$defs/Provenance'
+    additionalProperties: false
+  ScenePose:
+    type: object
+    required:
+    - position
+    - quat_wxyz
+    properties:
+      position:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+      quat_wxyz:
+        type: array
+        minItems: 4
+        maxItems: 4
+        items:
+          type: number
+    additionalProperties: false
+  SceneUnitPose:
+    type: object
+    required:
+    - unit_id
+    - position
+    - yaw_deg
+    properties:
+      unit_id: *id002
+      position:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+      yaw_deg:
+        type: number
+    additionalProperties: false
+  SceneActor:
+    type: object
+    required:
+    - embodiment
+    - base_pose
+    properties:
+      embodiment:
+        type: string
+        minLength: 1
+      base_pose:
+        $ref: '#/$defs/ScenePose'
+    additionalProperties: false
+  SceneCamera:
+    type: object
+    required:
+    - name
+    - type
+    - width
+    - height
+    - fovy_deg
+    - near
+    - far
+    - pose
+    - table_visible_polygon_xy
+    properties:
+      name:
+        type: string
+        minLength: 1
+      type:
+        type: string
+        minLength: 1
+      width:
+        type: integer
+        minimum: 1
+      height:
+        type: integer
+        minimum: 1
+      fovy_deg:
+        type: number
+        exclusiveMinimum: 0
+      near:
+        type: number
+        exclusiveMinimum: 0
+      far:
+        type: number
+        exclusiveMinimum: 0
+      pose:
+        $ref: '#/$defs/ScenePose'
+      table_visible_polygon_xy:
+        type: array
+        minItems: 3
+        items:
+          type: array
+          minItems: 2
+          maxItems: 2
+          items:
+            type: number
+    additionalProperties: false
+  ReachRecord:
+    type: object
+    required:
+    - reachable_arms
+    - zone
+    - evidence
+    properties:
+      reachable_arms:
+        type: array
+        uniqueItems: true
+        items:
+          enum:
+          - left
+          - right
+      zone:
+        enum:
+        - left_only
+        - both
+        - right_only
+        - none
+      evidence:
+        type: string
+        minLength: 1
+      articulation_capability:
+        type: object
+        required:
+        - capability_version
+        - uses
+        - evidence
+        properties:
+          capability_version:
+            const: articulation_arm_contact_candidate_v2_physical_acquisition
+          uses:
+            type: object
+            minProperties: 1
+            additionalProperties:
+              type: object
+              required:
+              - capable_arms
+              - arm_capabilities
+              properties:
+                capable_arms:
+                  type: array
+                  minItems: 1
+                  maxItems: 2
+                  uniqueItems: true
+                  items:
+                    enum:
+                    - left
+                    - right
+                arm_capabilities:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+              additionalProperties: false
+          evidence:
+            const: m11_exact_m4_articulation_capability_v1
+        additionalProperties: false
+      pick_planning_requirements:
+        type: array
+        minItems: 1
+        items:
+          type: object
+          required:
+          - goal_variant_id
+          - selected_arm
+          - required_arms
+          - requirement_mode
+          - route
+          - selection
+          - scope
+          - planning_witness_required
+          - final_feasibility_proven
+          properties:
+            goal_variant_id: *id002
+            selected_arm:
+              enum:
+              - left
+              - right
+            required_arms:
+              type: array
+              minItems: 1
+              maxItems: 1
+              uniqueItems: true
+              items:
+                enum:
+                - left
+                - right
+            requirement_mode:
+              const: all
+            route:
+              const: direct
+            selection:
+              enum:
+              - semantic_arm
+              - concrete_scene_reach
+              - direct_terminal_reach
+              - exact_planning_fallback
+            scope:
+              const: exact_scene_planning_required
+            planning_witness_required:
+              const: true
+            final_feasibility_proven:
+              const: false
+          additionalProperties: false
+    additionalProperties: false
+  TerminalReachRecord:
+    type: object
+    required:
+    - subject
+    - relation
+    - required_arm
+    - position_xy
+    - reachable_arms
+    - zone
+    - proxy_passed
+    - evidence
+    properties:
+      subject: *id004
+      relation:
+        type: string
+        minLength: 1
+      required_arm:
+        enum:
+        - left
+        - right
+        - both
+        - any
+      position_xy:
+        type: array
+        minItems: 2
+        maxItems: 2
+        items:
+          type: number
+      reachable_arms:
+        type: array
+        uniqueItems: true
+        items:
+          enum:
+          - left
+          - right
+      zone:
+        enum:
+        - left_only
+        - both
+        - right_only
+        - none
+      proxy_passed:
+        const: true
+      evidence:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  InitialObservation:
+    type: object
+    required:
+    - observation_id
+    - scene_state_hash
+    - variant_invariant
+    - artifact_path
+    properties:
+      observation_id: *id002
+      scene_state_hash:
+        type: string
+        minLength: 1
+      variant_invariant:
+        const: true
+      artifact_path:
+        type:
+        - string
+        - 'null'
+    additionalProperties: false
+  SceneEntity:
+    type: object
+    required:
+    - role_ref
+    - asset
+    - model_id
+    - unit_id
+    - pose
+    properties:
+      role_ref: *id001
+      asset:
+        type: string
+      model_id: *id003
+      unit_id: *id002
+      pose:
+        $ref: '#/$defs/ScenePose'
+      initial_pose:
+        $ref: '#/$defs/CanonicalInitialStatePlacement'
+    additionalProperties: false
+  SceneSpec:
+    type: object
+    required:
+    - id
+    - realized_family_id
+    - layout_seed
+    - entities
+    - unit_poses
+    - actor
+    - camera
+    - reach
+    - terminal_reach
+    - initial_observation
+    - goal_variant_ids
+    - provenance
+    properties:
+      id: *id002
+      realized_family_id: *id002
+      layout_seed:
+        type: integer
+      entities:
+        type: object
+        minProperties: 1
+        propertyNames: *id004
+        additionalProperties:
+          $ref: '#/$defs/SceneEntity'
+      unit_poses:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/SceneUnitPose'
+      actor:
+        $ref: '#/$defs/SceneActor'
+      camera:
+        $ref: '#/$defs/SceneCamera'
+      reach:
+        type: object
+        minProperties: 1
+        propertyNames: *id004
+        additionalProperties:
+          $ref: '#/$defs/ReachRecord'
+      terminal_reach:
+        type: object
+        additionalProperties:
+          $ref: '#/$defs/TerminalReachRecord'
+      initial_observation:
+        $ref: '#/$defs/InitialObservation'
+      goal_variant_ids:
+        type: array
+        items: *id002
+      provenance:
+        $ref: '#/$defs/Provenance'
+    additionalProperties: false
+  InstructionCandidate:
+    type: object
+    required:
+    - template_id
+    - style_id
+    - text
+    - semantic_frame
+    - goal_signature
+    properties:
+      template_id: *id002
+      style_id: *id002
+      text:
+        type: string
+        minLength: 1
+      semantic_frame:
+        type: object
+      goal_signature:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  RenderedInstruction:
+    type: object
+    required:
+    - language
+    - renderer_version
+    - candidates
+    - selected
+    - selection
+    properties:
+      language:
+        const: en
+      renderer_version:
+        type: integer
+        minimum: 1
+      candidates:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/InstructionCandidate'
+      selected:
+        $ref: '#/$defs/InstructionCandidate'
+      selection:
+        type: object
+        required:
+        - policy
+        - instruction_seed
+        - scene_spec_id
+        - shared_style_ids
+        - selected_style_id
+        - selection_digest
+        - candidate_set_hash
+        properties:
+          policy:
+            type: string
+            minLength: 1
+          instruction_seed:
+            type: integer
+            minimum: 0
+          scene_spec_id: *id002
+          shared_style_ids:
+            type: array
+            minItems: 1
+            uniqueItems: true
+            items: *id002
+          selected_style_id: *id002
+          selection_digest:
+            type: string
+            minLength: 1
+          candidate_set_hash:
+            type: string
+            minLength: 1
+        additionalProperties: false
+    additionalProperties: false
+  GoalProvenance:
+    type: object
+    required:
+    - abstract_family_id
+    - assignment_id
+    - schema_id
+    - role_refs
+    - entity_refs
+    - scene_entity_keys
+    - intended_axes
+    - goal_hash
+    - source_scene_hash
+    - source_realization_hash
+    properties:
+      abstract_family_id: *id002
+      assignment_id: *id002
+      schema_id: *id002
+      role_refs:
+        type: object
+      entity_refs:
+        type: object
+      scene_entity_keys:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items: *id004
+      intended_axes:
+        type: array
+        items:
+          $ref: '#/$defs/AxisSpec'
+      goal_hash:
+        type: string
+        minLength: 1
+      source_scene_hash:
+        type: string
+        minLength: 1
+      source_realization_hash:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  CheckerConfig:
+    type: object
+    required:
+    - version
+    - family
+    - goal_signature
+    - entity_refs
+    - success_contract
+    - predicate
+    - scene_integrity
+    properties:
+      version:
+        const: 5
+      family:
+        enum:
+        - A2O_state
+        - A2O_event
+        - O2O_relation
+      goal_signature:
+        type: string
+        minLength: 1
+      entity_refs:
+        type: object
+      success_contract:
+        $ref: '#/$defs/SuccessContractIdentity'
+      relation_contract:
+        $ref: '#/$defs/RelationContractIdentity'
+      predicate:
+        type: object
+        required:
+        - name
+        - arguments
+        properties:
+          name:
+            enum:
+            - pick_success
+            - articulation_state_success
+            - click_press_success
+            - orientation_success
+            - placement_completed
+          arguments:
+            type: object
+        additionalProperties: false
+      scene_integrity:
+        type: object
+        required:
+        - policy
+        - exempt_entities
+        - protected_entities
+        - protected_articulated_entities
+        properties:
+          policy:
+            type: object
+            required:
+            - policy_version
+            - participant_source
+            - translation_limit_m
+            - rotation_limit_deg
+            - articulation_normalized_limit
+            - limits_inclusive
+            - policy_hash
+            properties:
+              policy_version:
+                const: m13_m15_scene_integrity_v1_explicit_goal_entities_exempt
+              participant_source:
+                const: concrete_goal_recursive_scene_entity_references_v1
+              translation_limit_m:
+                type: number
+                minimum: 0.0
+              rotation_limit_deg:
+                type: number
+                minimum: 0.0
+              articulation_normalized_limit:
+                type: number
+                minimum: 0.0
+              limits_inclusive:
+                const: true
+              policy_hash:
+                type: string
+                minLength: 1
+            additionalProperties: false
+          exempt_entities:
+            type: array
+            uniqueItems: true
+            items: *id004
+          protected_entities:
+            type: array
+            uniqueItems: true
+            items: *id004
+          protected_articulated_entities:
+            type: array
+            uniqueItems: true
+            items: *id004
+        additionalProperties: false
+    additionalProperties: false
+  SuccessContractIdentity:
+    type: object
+    required:
+    - contract_id
+    - success_contract_version
+    - success_contract_hash
+    properties:
+      contract_id:
+        type: string
+        minLength: 1
+      success_contract_version:
+        type: string
+        minLength: 1
+      success_contract_hash:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  RelationContractIdentity:
+    type: object
+    required:
+    - relation_contract_version
+    - relation_contract_hash
+    properties:
+      relation_contract_version:
+        type: string
+        minLength: 1
+      relation_contract_hash:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  SkillConfig:
+    type: object
+    required:
+    - version
+    - operation_anchor_policy_version
+    - goal_signature
+    - semantic_arm
+    - execution_arm
+    - route
+    - steps
+    properties:
+      version:
+        type: integer
+        minimum: 1
+      operation_anchor_policy_version:
+        type: string
+        minLength: 1
+      goal_signature:
+        type: string
+        minLength: 1
+      semantic_arm:
+        type:
+        - string
+        - 'null'
+      execution_arm:
+        enum:
+        - left
+        - right
+      route:
+        const: direct
+      steps:
+        type: array
+        minItems: 1
+        items:
+          type: object
+    additionalProperties: false
+  LegacyTaskExport:
+    type: object
+    required:
+    - version
+    - task_name
+    - task_variant
+    - setup_payload
+    properties:
+      version:
+        type: integer
+        minimum: 1
+      task_name:
+        const: if_scene
+      task_variant:
+        type: string
+        minLength: 1
+      setup_payload:
+        type: object
+    additionalProperties: false
+  TaskRecord:
+    type: object
+    required:
+    - id
+    - scene_spec_id
+    - realized_family_id
+    - goal_variant_id
+    - goal
+    - goal_provenance
+    - instruction
+    - success_contract
+    - checker_config
+    - skill_config
+    - legacy_export
+    - provenance
+    properties:
+      id: *id002
+      scene_spec_id: *id002
+      realized_family_id: *id002
+      goal_variant_id: *id002
+      goal:
+        $ref: '#/$defs/ConcreteGoal'
+      goal_provenance:
+        $ref: '#/$defs/GoalProvenance'
+      instruction:
+        $ref: '#/$defs/RenderedInstruction'
+      success_contract:
+        $ref: '#/$defs/SuccessContractIdentity'
+      relation_contract:
+        $ref: '#/$defs/RelationContractIdentity'
+      checker_config:
+        $ref: '#/$defs/CheckerConfig'
+      skill_config:
+        $ref: '#/$defs/SkillConfig'
+      legacy_export:
+        $ref: '#/$defs/LegacyTaskExport'
+      provenance:
+        $ref: '#/$defs/Provenance'
+    additionalProperties: false
+  MinimalPairEndpoint:
+    type: object
+    required:
+    - goal_variant_id
+    - task_record_id
+    - task_artifact_hash
+    - goal_hash
+    - instruction_hash
+    - checker_hash
+    - style_id
+    properties:
+      goal_variant_id: *id002
+      task_record_id: *id002
+      task_artifact_hash:
+        type: string
+        minLength: 1
+      goal_hash:
+        type: string
+        minLength: 1
+      instruction_hash:
+        type: string
+        minLength: 1
+      checker_hash:
+        type: string
+        minLength: 1
+      style_id: *id002
+    additionalProperties: false
+  ValidatedMinimalPair:
+    type: object
+    required:
+    - id
+    - scene_spec_id
+    - realized_family_id
+    - layout_seed
+    - assignment_id
+    - observation_id
+    - scene_state_hash
+    - from_goal_variant_id
+    - to_goal_variant_id
+    - intended_axis
+    - intended_subtype
+    - intended_dcode
+    - actual_axes
+    - actual_dcodes
+    - unmapped_semantic_deltas
+    - status
+    - source_scene_hash
+    - source_realization_hash
+    - from_endpoint
+    - to_endpoint
+    properties:
+      id: *id002
+      scene_spec_id: *id002
+      realized_family_id: *id002
+      layout_seed:
+        type: integer
+        minimum: 0
+      assignment_id: *id002
+      observation_id: *id002
+      scene_state_hash:
+        type: string
+        minLength: 1
+      from_goal_variant_id: *id002
+      to_goal_variant_id: *id002
+      intended_axis:
+        enum:
+        - D1a
+        - D1b
+        - D1c
+        - D2a
+        - D2b
+        - D4
+      intended_subtype:
+        type: string
+        minLength: 1
+      intended_dcode:
+        type: string
+        minLength: 1
+      actual_axes:
+        type: array
+        minItems: 1
+        items:
+          enum:
+          - D1a
+          - D1b
+          - D1c
+          - D2a
+          - D2b
+          - D4
+      actual_dcodes:
+        type: array
+        minItems: 1
+        items:
+          type: string
+          minLength: 1
+      unmapped_semantic_deltas:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      status:
+        const: valid
+      source_scene_hash:
+        type: string
+        minLength: 1
+      source_realization_hash:
+        type: string
+        minLength: 1
+      from_endpoint:
+        $ref: '#/$defs/MinimalPairEndpoint'
+      to_endpoint:
+        $ref: '#/$defs/MinimalPairEndpoint'
+    additionalProperties: false
+  AxisContrastMember:
+    type: object
+    required:
+    - matrix_index
+    - goal_variant_id
+    - axis_value
+    - intent_goal_hash
+    properties:
+      matrix_index:
+        type: integer
+        minimum: 0
+      goal_variant_id: *id002
+      axis_value: {}
+      intent_goal_hash:
+        type: string
+        minLength: 1
+      task_record_id: *id002
+      task_artifact_hash:
+        type: string
+        minLength: 1
+      goal_hash:
+        type: string
+        minLength: 1
+      instruction_hash:
+        type: string
+        minLength: 1
+      checker_hash:
+        type: string
+        minLength: 1
+      style_id: *id002
+    additionalProperties: false
+  AxisContrastSet:
+    type: object
+    required:
+    - id
+    - scene_spec_id
+    - realized_family_id
+    - layout_seed
+    - observation_id
+    - scene_state_hash
+    - axis
+    - subtype
+    - dcode
+    - context_signature
+    - k
+    - members
+    - pair_ids
+    - matrix_ready
+    properties:
+      id: *id002
+      scene_spec_id: *id002
+      realized_family_id: *id002
+      layout_seed:
+        type: integer
+        minimum: 0
+      observation_id: *id002
+      scene_state_hash:
+        type: string
+        minLength: 1
+      axis:
+        enum:
+        - D1a
+        - D1b
+        - D1c
+        - D2a
+        - D2b
+        - D4
+      subtype:
+        type: string
+        minLength: 1
+      dcode:
+        type: string
+        minLength: 1
+      context_signature:
+        type: string
+        minLength: 1
+      k:
+        type: integer
+        minimum: 2
+      members:
+        type: array
+        minItems: 2
+        items:
+          $ref: '#/$defs/AxisContrastMember'
+      pair_ids:
+        type: array
+        items: *id002
+      matrix_ready:
+        type: boolean
+    additionalProperties: false
+  OriginRelativeBounds:
+    type: object
+    required:
+    - frame
+    - min_xyz
+    - max_xyz
+    - extents_xyz
+    - source
+    properties:
+      frame:
+        const: actor_origin_after_q0_before_world_yaw
+      min_xyz:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+      max_xyz:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+      extents_xyz:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+      source:
+        type: string
+        minLength: 1
+      error:
+        type: string
+    additionalProperties: false
+  InitialPoseSupport:
+    type: object
+    required:
+    - plane_z
+    - clearance_m
+    - origin_z
+    - formula
+    properties:
+      plane_z:
+        type: number
+      clearance_m:
+        type: number
+        minimum: 0
+      origin_z:
+        type: number
+      formula:
+        const: support_z-local_z_min+support_clearance
+    additionalProperties: false
+  InitialPoseYawPolicy:
+    oneOf:
+    - type: object
+      required:
+      - mode
+      - period_deg
+      properties:
+        mode:
+          const: free
+        period_deg:
+          type: number
+          exclusiveMinimum: 0
+      additionalProperties: false
+    - type: object
+      required:
+      - mode
+      - yaw_deg
+      properties:
+        mode:
+          const: fixed
+        yaw_deg:
+          type: number
+      additionalProperties: false
+  ArticulatedInitialJointState:
+    type: object
+    required:
+    - mode
+    - qpos
+    properties:
+      mode:
+        enum:
+        - not_articulated
+        - exact_model_data_default
+        - exact_reviewed_profile
+      profile_id:
+        type: string
+      qpos:
+        type: array
+        items:
+          type: number
+      joint_index:
+        type:
+        - integer
+        - 'null'
+        minimum: 0
+      joints:
+        type: array
+        items:
+          type: object
+      joint_targets:
+        type: array
+        items:
+          type: object
+    additionalProperties: false
+  AssignmentStateRevision:
+    type: object
+    required:
+    - artifact_kind
+    - schema_version
+    - revision_hash
+    - source_canonical_state_hash
+    - coordinate_semantics
+    - review_authority
+    - runtime_geometry_hash
+    properties:
+      artifact_kind:
+        const: AssignmentJointCoordinateRevision
+      schema_version:
+        const: 1
+      revision_hash:
+        type: string
+        minLength: 1
+      source_canonical_state_hash:
+        type: string
+        minLength: 1
+      coordinate_semantics:
+        type: string
+        minLength: 1
+      review_authority:
+        type: string
+        minLength: 1
+      runtime_geometry_hash:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  DynamicAssetMassProperties:
+    oneOf:
+    - type: object
+      required:
+      - mode
+      - target_mass_kg
+      - inertia_mode
+      - policy_version
+      - source_fields
+      properties:
+        mode:
+          const: collision_geometry_auto
+        target_mass_kg:
+          type: 'null'
+        inertia_mode:
+          const: collision_geometry_auto
+        policy_version:
+          type: string
+          minLength: 1
+        source_fields:
+          type: array
+          maxItems: 0
+      additionalProperties: false
+    - type: object
+      required:
+      - mode
+      - target_mass_kg
+      - inertia_mode
+      - policy_version
+      - source_fields
+      properties:
+        mode:
+          const: explicit_target
+        target_mass_kg:
+          type: number
+          exclusiveMinimum: 0
+        inertia_mode:
+          const: density_proportional
+        policy_version:
+          type: string
+          minLength: 1
+        source_fields:
+          type: array
+          minItems: 1
+          items:
+            type: string
+            minLength: 1
+          uniqueItems: true
+      additionalProperties: false
+  CanonicalInitialState:
+    type: object
+    required:
+    - artifact_kind
+    - schema_version
+    - initial_state_id
+    - asset
+    - model_id
+    - initial_state_profile_id
+    - revision
+    - revision_hash
+    - q0_wxyz
+    - articulated_joint_state
+    - yaw_policy
+    - scale_xyz
+    - origin_relative_bounds
+    - support
+    - geometry_hash
+    - status
+    - canonical_state_hash
+    properties:
+      artifact_kind:
+        const: CanonicalInitialState
+      schema_version:
+        const: 1
+      initial_state_id: *id002
+      asset:
+        type: string
+        minLength: 1
+      model_id: *id003
+      initial_state_profile_id: *id002
+      revision:
+        type: integer
+        minimum: 0
+      revision_hash:
+        type: string
+        minLength: 1
+      q0_wxyz:
+        type: array
+        minItems: 4
+        maxItems: 4
+        items:
+          type: number
+      articulated_joint_state:
+        $ref: '#/$defs/ArticulatedInitialJointState'
+      yaw_policy:
+        $ref: '#/$defs/InitialPoseYawPolicy'
+      scale_xyz:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+          exclusiveMinimum: 0
+      origin_relative_bounds:
+        $ref: '#/$defs/OriginRelativeBounds'
+      support:
+        $ref: '#/$defs/InitialPoseSupport'
+      geometry_hash:
+        type: string
+        minLength: 1
+      candidate_roles:
+        type: array
+        items:
+          type: string
+      candidate_uses:
+        type: array
+        items:
+          type: string
+      dynamic_mass_properties:
+        $ref: '#/$defs/DynamicAssetMassProperties'
+      assignment_eligible:
+        type: boolean
+      status:
+        enum:
+        - approved
+        - unsupported
+      support_validation:
+        type: object
+      support_validation_hash:
+        type: string
+      assignment_state_revision:
+        $ref: '#/$defs/AssignmentStateRevision'
+      canonical_state_hash:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  InitialPoseApproval:
+    type: object
+    required:
+    - artifact_kind
+    - schema_version
+    - initial_state_id
+    - revision
+    - revision_hash
+    - geometry_hash
+    - render_manifest_hash
+    - review_hash
+    - reviewer
+    - decision
+    - approval_hash
+    properties:
+      artifact_kind:
+        const: InitialPoseApproval
+      schema_version:
+        const: 1
+      initial_state_id: *id002
+      revision:
+        type: integer
+        minimum: 0
+      revision_hash:
+        type: string
+        minLength: 1
+      geometry_hash:
+        type: string
+        minLength: 1
+      render_manifest_hash:
+        type: string
+        minLength: 1
+      review_hash:
+        type: string
+        minLength: 1
+      reviewer:
+        type: string
+        minLength: 1
+      decision:
+        enum:
+        - approved
+        - unsupported
+      notes:
+        type: string
+      approval_hash:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  CanonicalInitialStatePlacement:
+    type: object
+    required:
+    - initial_state_id
+    - revision
+    - revision_hash
+    - geometry_hash
+    - canonical_state_hash
+    - q0_wxyz
+    - world_yaw_deg
+    - yaw_policy
+    - scale_xyz
+    - origin_relative_bounds
+    - support
+    - articulated_joint_state
+    - dynamic_mass_properties
+    properties:
+      initial_state_id: *id002
+      revision:
+        type: integer
+        minimum: 0
+      revision_hash:
+        type: string
+        minLength: 1
+      geometry_hash:
+        type: string
+        minLength: 1
+      canonical_state_hash:
+        type: string
+        minLength: 1
+      q0_wxyz:
+        type: array
+        minItems: 4
+        maxItems: 4
+        items:
+          type: number
+      world_yaw_deg:
+        type: number
+      yaw_policy:
+        $ref: '#/$defs/InitialPoseYawPolicy'
+      scale_xyz:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+      origin_relative_bounds:
+        $ref: '#/$defs/OriginRelativeBounds'
+      support:
+        $ref: '#/$defs/InitialPoseSupport'
+      articulated_joint_state:
+        $ref: '#/$defs/ArticulatedInitialJointState'
+      dynamic_mass_properties:
+        $ref: '#/$defs/DynamicAssetMassProperties'
+      assignment_state_revision:
+        $ref: '#/$defs/AssignmentStateRevision'
+    additionalProperties: false
+  SceneValidationRecord:
+    type: object
+    required:
+    - artifact_kind
+    - schema_version
+    - scene_validation_version
+    - id
+    - scene_spec_id
+    - realized_family_id
+    - source_scene_hash
+    - source_realization_hash
+    - source_unit_hash
+    - plan_hash
+    - config_hash
+    - contract_id
+    - success_contract_version
+    - success_contract_hash
+    - calibration_only
+    - publication_ready
+    - descriptor_gate
+    - not_success_at_t0
+    - infrastructure_failure
+    - source_failure
+    - internal_failure
+    - task_results
+    - summary
+    - provenance
+    - artifact_hash
+    properties:
+      artifact_kind:
+        const: scene_validation_record
+      schema_version:
+        const: 1
+      scene_validation_version:
+        const: 9
+      id: *id002
+      scene_spec_id: *id002
+      realized_family_id: *id002
+      source_scene_hash:
+        type: string
+        minLength: 1
+      source_realization_hash:
+        type: string
+        minLength: 1
+      source_unit_hash:
+        type: string
+        minLength: 1
+      plan_hash:
+        type: string
+        minLength: 1
+      config_hash:
+        type: string
+        minLength: 1
+      contract_id:
+        type: string
+        minLength: 1
+      success_contract_version:
+        type: string
+        minLength: 1
+      success_contract_hash:
+        type: string
+        minLength: 1
+      calibration_only:
+        type: boolean
+      publication_ready:
+        type: boolean
+      descriptor_gate:
+        type: object
+      not_success_at_t0:
+        type: object
+        required:
+        - passed
+        - task_count
+        properties:
+          passed:
+            type: boolean
+          task_count:
+            type: integer
+            minimum: 0
+        additionalProperties: false
+      infrastructure_failure:
+        type: boolean
+      source_failure:
+        type: boolean
+      internal_failure:
+        type: boolean
+      task_results:
+        type: array
+        items:
+          type: object
+          required:
+          - task_record_id
+          - goal_variant_id
+          - source_task_hash
+          - validated
+          - excluded
+          - success_count
+          - denominator
+          - minimum_success_count
+          - success_rate
+          - classification_counts
+          - t0_false
+          - contract_id
+          - success_contract_version
+          - success_contract_hash
+          - success_snapshot_hashes
+          - infrastructure_failure_count
+          - source_failure_count
+          - internal_failure_count
+          - attempts
+          properties:
+            task_record_id: *id002
+            goal_variant_id: *id002
+            source_task_hash:
+              type: string
+              minLength: 1
+            validated:
+              type: boolean
+            excluded:
+              type: boolean
+            success_count:
+              type: integer
+              minimum: 0
+            denominator:
+              type: integer
+              minimum: 0
+            minimum_success_count:
+              type: integer
+              minimum: 1
+            success_rate:
+              type:
+              - number
+              - 'null'
+              minimum: 0
+              maximum: 1
+            classification_counts:
+              type: object
+              additionalProperties:
+                type: integer
+                minimum: 0
+            t0_false:
+              type: boolean
+            contract_id:
+              type: string
+              minLength: 1
+            success_contract_version:
+              type: string
+              minLength: 1
+            success_contract_hash:
+              type: string
+              minLength: 1
+            success_snapshot_hashes:
+              type: array
+              uniqueItems: true
+              items:
+                type: string
+                minLength: 1
+            infrastructure_failure_count:
+              type: integer
+              minimum: 0
+            source_failure_count:
+              type: integer
+              minimum: 0
+            internal_failure_count:
+              type: integer
+              minimum: 0
+            attempts:
+              type: array
+              items:
+                type: object
+          additionalProperties: false
+      summary:
+        type: object
+        required:
+        - task_count
+        - validated_task_count
+        - excluded_task_count
+        properties:
+          task_count:
+            type: integer
+            minimum: 0
+          validated_task_count:
+            type: integer
+            minimum: 0
+          excluded_task_count:
+            type: integer
+            minimum: 0
+        additionalProperties: false
+      provenance:
+        $ref: '#/$defs/Provenance'
+      artifact_hash:
+        type: string
+        minLength: 1
+    additionalProperties: false

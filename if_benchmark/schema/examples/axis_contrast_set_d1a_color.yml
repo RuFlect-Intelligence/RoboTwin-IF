@@ -1,0 +1,48 @@
+schema_version: 1
+kind: axis_contrast_set
+axis_contrast_set:
+  id: cs_d1a_red_blue
+  scene_spec_id: ss_rsf_d1a_color_cube_red_blue_seed7
+  realized_family_id: rsf_d1a_color_cube_red_blue
+  layout_seed: 7
+  observation_id: obs_seed7
+  scene_state_hash: example_state_hash
+  axis: D1a
+  subtype: color
+  dcode: D1a.color
+  context_signature: context-hash
+  k: 2
+  members:
+  - matrix_index: 0
+    goal_variant_id: pick_a
+    axis_value:
+    - slot: subject
+      entity: obj_a
+      descriptor:
+        subtype: color
+        value: red
+    intent_goal_hash: goal-a-hash
+    task_record_id: task_pick_a
+    task_artifact_hash: task-a-hash
+    goal_hash: goal-a-hash
+    instruction_hash: instruction-a-hash
+    checker_hash: checker-a-hash
+    style_id: style_0
+  - matrix_index: 1
+    goal_variant_id: pick_b
+    axis_value:
+    - slot: subject
+      entity: obj_b
+      descriptor:
+        subtype: color
+        value: blue
+    intent_goal_hash: goal-b-hash
+    task_record_id: task_pick_b
+    task_artifact_hash: task-b-hash
+    goal_hash: goal-b-hash
+    instruction_hash: instruction-b-hash
+    checker_hash: checker-b-hash
+    style_id: style_0
+  pair_ids:
+  - mp_d1a_red_blue
+  matrix_ready: true

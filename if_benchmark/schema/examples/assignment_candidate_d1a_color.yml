@@ -1,0 +1,90 @@
+schema_version: 1
+kind: assignment_candidate
+assignment_candidate:
+  id: ac_color_cube_red_blue_000
+  abstract_family_id: asf_d1a_color_subject_pair
+  archetype_ids:
+  - attribute_subject_pair
+  roles:
+    subj_a:
+      asset: 073_rubikscube
+      model_id: '0'
+      category: cube
+      roles:
+      - manipuland
+    subj_b:
+      asset: 073_rubikscube
+      model_id: '1'
+      category: cube
+      roles:
+      - manipuland
+  resolved_values:
+    subj_a:
+      noun: cube
+      attributes:
+        color: red
+    subj_b:
+      noun: cube
+      attributes:
+        color: blue
+  proven_facts:
+  - constraint: c_same_category
+    fact: same_category(subj_a, subj_b, cube)
+  - constraint: c_unique_a
+    fact: unique_descriptor(subj_a, color:red)
+  - constraint: c_unique_b
+    fact: unique_descriptor(subj_b, color:blue)
+  - constraint: c_pick_a
+    fact: validated_use(subj_a, pick_left)
+  - constraint: c_pick_b
+    fact: validated_use(subj_b, pick_left)
+  evidence_refs:
+  - kind: attribute_review
+    asset: 073_rubikscube
+    model_id: '0'
+    field: color
+  - kind: attribute_review
+    asset: 073_rubikscube
+    model_id: '1'
+    field: color
+  - kind: asset_validation
+    asset: 073_rubikscube
+    model_id: '0'
+    use: pick_left
+  - kind: asset_validation
+    asset: 073_rubikscube
+    model_id: '1'
+    use: pick_left
+  layout_requirements:
+  - type: object_unit
+    roles:
+    - subj_a
+  - type: object_unit
+    roles:
+    - subj_b
+  - type: reach_zone
+    role: subj_a
+    allowed:
+    - left_only
+    - both
+  - type: reach_zone
+    role: subj_b
+    allowed:
+    - left_only
+    - both
+  materialization_params:
+    variant_substitutions:
+      subj_a: obj_a
+      subj_b: obj_b
+      subj_a.attribute.color: color:red
+      subj_b.attribute.color: color:blue
+  provenance:
+    generator: if_benchmark.schema.examples
+    config_hash: m6_contract_v1
+    sources:
+    - kind: reviewed_attribute_catalog
+      path: if_benchmark/data/attributes/reviewed_attribute_catalog.yml
+      hash: example_attribute_catalog_hash
+    - kind: asset_validation
+      path: if_benchmark/assets/asset_validation.yml
+      hash: example_asset_validation_hash

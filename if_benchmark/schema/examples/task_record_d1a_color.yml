@@ -1,0 +1,147 @@
+schema_version: 1
+kind: task_record
+task_record:
+  id: task_d1a_pick_red
+  scene_spec_id: ss_rsf_d1a_color_cube_red_blue_seed7
+  realized_family_id: rsf_d1a_color_cube_red_blue
+  goal_variant_id: pick_a
+  goal:
+    verb: pick
+    subject: obj_a
+    arm: left
+    target: null
+    subject2: null
+    target2: null
+    descriptors: &id001
+      subject:
+        attribute:
+          subtype: color
+          value: red
+    params: {}
+  goal_provenance:
+    abstract_family_id: asf_d1a_color_subject_pair
+    assignment_id: ac_color_cube_red_blue_000
+    schema_id: pick_a
+    role_refs:
+      subject: subj_a
+    entity_refs:
+      subject: obj_a
+    scene_entity_keys:
+    - obj_a
+    - obj_b
+    intended_axes:
+    - axis: D1a
+      subtype: color
+    goal_hash: goal-hash
+    source_scene_hash: scene-hash
+    source_realization_hash: realization-hash
+  instruction:
+    language: en
+    renderer_version: 3
+    candidates:
+    - &id003
+      template_id: tpl_pick_style_0
+      style_id: style_0
+      text: Use the left arm to pick up the red cube.
+      semantic_frame: &id002
+        verb: pick
+        action_family: A2O_state
+        relation: null
+        state: acquired
+        arm: left
+        entity_refs:
+          subject: obj_a
+        descriptors: *id001
+        params: {}
+      goal_signature: goal-signature
+    - template_id: tpl_pick_style_1
+      style_id: style_1
+      text: With the left arm, lift the red cube from the table.
+      semantic_frame: *id002
+      goal_signature: goal-signature
+    - template_id: tpl_pick_style_2
+      style_id: style_2
+      text: Pick up the red cube using the left arm.
+      semantic_frame: *id002
+      goal_signature: goal-signature
+    - template_id: tpl_pick_style_3
+      style_id: style_3
+      text: Using your left arm, grasp and lift the red cube.
+      semantic_frame: *id002
+      goal_signature: goal-signature
+    selected: *id003
+    selection:
+      policy: sha256_scene_shared_style_v1
+      instruction_seed: 0
+      scene_spec_id: ss_rsf_d1a_color_cube_red_blue_seed7
+      shared_style_ids:
+      - style_0
+      - style_1
+      - style_2
+      - style_3
+      selected_style_id: style_0
+      selection_digest: selection-digest
+      candidate_set_hash: candidate-set-hash
+  success_contract:
+    contract_id: benchmarkv1_shared_success_contract
+    success_contract_version: benchmarkv1_success_contract_v1
+    success_contract_hash: success-contract-hash
+  checker_config:
+    version: 5
+    family: A2O_state
+    goal_signature: goal-signature
+    entity_refs:
+      subject: obj_a
+    success_contract:
+      contract_id: benchmarkv1_shared_success_contract
+      success_contract_version: benchmarkv1_success_contract_v1
+      success_contract_hash: success-contract-hash
+    predicate:
+      name: pick_success
+      arguments:
+        subject: obj_a
+        requested_arm: left
+    scene_integrity:
+      policy:
+        policy_version: m13_m15_scene_integrity_v1_explicit_goal_entities_exempt
+        participant_source: concrete_goal_recursive_scene_entity_references_v1
+        translation_limit_m: 0.004
+        rotation_limit_deg: 3.0
+        articulation_normalized_limit: 0.02
+        limits_inclusive: true
+        policy_hash: e1d58075612ffa5735168416833974f7e7fe459cc1428f4e5376dc3dab5b527f
+      exempt_entities:
+      - obj_a
+      protected_entities:
+      - obj_b
+      protected_articulated_entities: []
+  skill_config:
+    version: 8
+    operation_anchor_policy_version: operation_anchor_projection_v2_link_fk
+    goal_signature: goal-signature
+    semantic_arm: left
+    execution_arm: left
+    route: direct
+    steps:
+    - op: grasp
+      subject: obj_a
+      arm: left
+  legacy_export:
+    version: 1
+    task_name: if_scene
+    task_variant: left_arm_pick(obj_a)|desc=subject.attribute=color:red
+    setup_payload:
+      task_record_id: task_d1a_pick_red
+      scene_spec_id: ss_rsf_d1a_color_cube_red_blue_seed7
+      realized_family_id: rsf_d1a_color_cube_red_blue
+      layout_seed: 7
+      embodiment: aloha-agilex
+      instruction: Use the left arm to pick up the red cube.
+      task_variant: left_arm_pick(obj_a)|desc=subject.attribute=color:red
+  provenance:
+    generator: if_benchmark.tasks
+    config_hash: task-config-hash
+    sources:
+    - kind: scene_spec
+      hash: scene-hash
+      record_id: ss_rsf_d1a_color_cube_red_blue_seed7

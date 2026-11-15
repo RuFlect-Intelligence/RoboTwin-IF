@@ -1,0 +1,15 @@
+-r requirements.txt
+sapien==3.0.2
+mplib==0.2.1
+toppra==0.6.10
+gymnasium==0.29.1
+trimesh==5.1.0
+open3d==0.18.0
+imageio==2.37.2
+warp-lang==1.8.0
+termcolor
+packaging
+opencv-python-headless<4.12
+h5py
+wheel
+setuptools==69.5.1

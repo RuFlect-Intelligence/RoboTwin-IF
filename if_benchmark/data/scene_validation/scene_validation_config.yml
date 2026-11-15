@@ -1,0 +1,107 @@
+coverage_waivers:
+- evidence:
+    abstract_family_id: asf_d1a_d2a_d4
+    failure_code_counts:
+      layout_search_exhausted: 10
+    realized_family_count: 10
+    unsat_count: 10
+  id: d1a_d2a_d4_m12_geometric_unsat_v1
+  reason: >-
+    The frozen M12 v1 layout has no solved SceneSpec for this family because
+    the articulated-object footprint cannot satisfy the narrow D4 both-arm
+    overlap together with the remaining frozen layout constraints.
+  reason_code: m12_family_fully_geometric_unsat
+  scopes:
+  - pilot
+  source_report:
+    artifact_kind: layout_unsat_report
+    path: if_benchmark/data/scene_specs/layout_unsat_report.yml
+    report_hash: f7f8113503d41e0a92b8bca37e0cf9399871eddc404deeffc35809a833e677f2
+  tokens:
+  - abstract_family:asf_d1a_d2a_d4
+  - fusion_signature:D1a+D2a+D4
+- evidence:
+    abstract_family_id: asf_d1b_d2a_d4
+    failure_code_counts:
+      camera_bounds: 875
+      reach_bounds: 1021
+    realized_family_count: 1896
+    unsat_count: 1896
+  id: d1b_d2a_d4_m12_geometric_unsat_v1
+  reason: >-
+    The frozen M12 v1 layout has no solved SceneSpec for this family because
+    two conservative articulated footprints around one landmark cannot jointly
+    satisfy head-camera containment and the narrow D4 both-arm overlap.
+  reason_code: m12_family_fully_geometric_unsat
+  scopes:
+  - pilot
+  source_report:
+    artifact_kind: layout_unsat_report
+    path: if_benchmark/data/scene_specs/layout_unsat_report.yml
+    report_hash: f7f8113503d41e0a92b8bca37e0cf9399871eddc404deeffc35809a833e677f2
+  tokens:
+  - abstract_family:asf_d1b_d2a_d4
+  - fusion_signature:D1b+D2a+D4
+- evidence:
+    abstract_family_id: asf_d1c_d2a_d4
+    failure_code_counts:
+      layout_search_exhausted: 6
+    realized_family_count: 6
+    unsat_count: 6
+  id: d1c_d2a_d4_m12_geometric_unsat_v1
+  reason: >-
+    The frozen M12 v1 layout has no solved SceneSpec for this family because
+    the articulated-object footprint cannot satisfy the narrow D4 both-arm
+    overlap together with the remaining frozen layout constraints.
+  reason_code: m12_family_fully_geometric_unsat
+  scopes:
+  - pilot
+  source_report:
+    artifact_kind: layout_unsat_report
+    path: if_benchmark/data/scene_specs/layout_unsat_report.yml
+    report_hash: f7f8113503d41e0a92b8bca37e0cf9399871eddc404deeffc35809a833e677f2
+  tokens:
+  - abstract_family:asf_d1c_d2a_d4
+  - fusion_signature:D1c+D2a+D4
+descriptor_gate:
+  minimum_area_ratio: 1.12
+  minimum_bbox_fill: 0.12
+  minimum_depth_gap_m: 0.01
+  minimum_image_gap_px: 8
+  minimum_mask_area_px: 60
+environment:
+  domain_randomization: false
+  setup_profile: demo_clean
+evidence:
+  camera_name: head_camera
+  depth_format: npy
+  rgb_format: png
+  segmentation_format: npy
+pilot:
+  candidates_per_family: 24
+  maximum_scene_specs: 64
+rollout:
+  attempt_timeout_seconds: 300
+  minimum_success_count: 2
+  seeds:
+  - 0
+  - 1
+  - 2
+  settle:
+    component_policy_version: scene_stability_components_v2_root_and_active_child_links
+    axial_symmetry_assets:
+      001_bottle: y
+      093_brush-pen: z
+    maximum_steps: 1600
+    minimum_steps: 600
+    rotation_window_deg: 3.0
+    translation_window_m: 0.004
+    window_steps: 200
+skill_execution:
+  carry_obstacle_clearance_m: 0.025
+  lift_increment_m: 0.025
+  maximum_grasp_attempts: 12
+  maximum_lift_steps: 8
+  minimum_normalized_joint_margin: 0.1
+scene_validation_version: 9
+schema_version: 1

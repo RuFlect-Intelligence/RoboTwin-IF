@@ -1,0 +1,14 @@
+schema_version: 1
+kind: abstract_family
+abstract_family:
+  id: asf_d1a_color_subject_pair
+  axis_plan:
+  - axis: D1a
+    subtype: color
+    role: subject
+    values: any_reviewed_pair
+  archetypes:
+  - attribute_subject_pair
+  randomization:
+    assignment_seed_policy: sample_assignment_candidate
+    layout_seed_policy: sample_layout_per_realized_family

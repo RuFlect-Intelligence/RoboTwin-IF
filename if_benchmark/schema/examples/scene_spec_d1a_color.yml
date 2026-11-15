@@ -1,0 +1,120 @@
+schema_version: 1
+kind: scene_spec
+scene_spec:
+  id: ss_rsf_d1a_color_cube_red_blue_seed7
+  realized_family_id: rsf_d1a_color_cube_red_blue
+  layout_seed: 7
+  entities:
+    obj_a:
+      role_ref: subj_a
+      asset: 073_rubikscube
+      model_id: '0'
+      unit_id: unit_obj_a
+      pose:
+        position:
+        - -0.12
+        - 0.12
+        - 0.79
+        quat_wxyz:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+    obj_b:
+      role_ref: subj_b
+      asset: 073_rubikscube
+      model_id: '1'
+      unit_id: unit_obj_b
+      pose:
+        position:
+        - 0.14
+        - 0.1
+        - 0.79
+        quat_wxyz:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+  unit_poses:
+  - unit_id: unit_obj_a
+    position:
+    - -0.12
+    - 0.12
+    - 0.74
+    yaw_deg: 0.0
+  - unit_id: unit_obj_b
+    position:
+    - 0.14
+    - 0.1
+    - 0.74
+    yaw_deg: 0.0
+  actor:
+    embodiment: aloha-agilex
+    base_pose:
+      position:
+      - 0.0
+      - -0.65
+      - 0.0
+      quat_wxyz:
+      - 0.707106781187
+      - 0.0
+      - 0.0
+      - 0.707106781187
+  camera:
+    name: head_camera
+    type: D435
+    width: 320
+    height: 240
+    fovy_deg: 37.0
+    near: 0.1
+    far: 100.0
+    pose:
+      position:
+      - -0.032
+      - -0.45
+      - 1.35
+      quat_wxyz:
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+    table_visible_polygon_xy:
+    - - -0.303932
+      - -0.247436
+    - - 0.239932
+      - -0.247436
+    - - 0.422136
+      - 0.433252
+    - - -0.486136
+      - 0.433252
+  reach:
+    obj_a:
+      reachable_arms:
+      - left
+      zone: left_only
+      evidence: example_static_proxy
+    obj_b:
+      reachable_arms:
+      - left
+      - right
+      zone: both
+      evidence: example_static_proxy
+  terminal_reach: {}
+  initial_observation:
+    observation_id: obs_seed7
+    scene_state_hash: example_state_hash
+    variant_invariant: true
+    artifact_path: null
+  goal_variant_ids:
+  - pick_a
+  - pick_b
+  provenance:
+    generator: if_benchmark.layout
+    config_hash: example_layout_config_hash
+    sources:
+    - kind: realized_scene_family
+      hash: example_realization_hash
+      record_id: rsf_d1a_color_cube_red_blue
+    - kind: unit_build
+      hash: example_unit_hash
+      record_id: rsf_d1a_color_cube_red_blue

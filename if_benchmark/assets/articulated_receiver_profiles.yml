@@ -1,0 +1,179 @@
+schema_version: 1
+kind: m5_articulated_receiver_profiles
+policy: reviewed_state_conditioned_cavity_link
+notes:
+  - These profiles are isolated from the rigid M5 sweep.
+  - Pending profiles remain probe_spec_blocked until cavity geometry is reviewed with Render.
+  - Door and drawer-front links are actuator or occluder links, never generic place_on surfaces.
+profiles:
+  cabinet_46653_drawer_0_open:
+    review_status: reviewed
+    relation: place_in
+    receiver:
+      asset: 036_cabinet
+      model_id: "46653"
+      category: cabinet
+      inventory_id: 036_cabinet|46653
+    fixture:
+      root_q0_wxyz: [1.0, 0.0, 0.0, 1.0]
+      table_xy: [0.0, 0.155]
+      root_z: 0.741
+      source: envs/put_object_cabinet.py
+    state:
+      state_name: drawer_0_open
+      joint_targets:
+        - joint_index: 0
+          joint_name: joint_1
+          target_ratio: 0.6
+          tolerance_ratio: 0.04
+          source: articulation_drive.state_setup
+    passive_joint_properties:
+      stiffness: 200.0
+      damping: 20.0
+      force_limit: 100.0
+      friction: 1.0
+    cavity:
+      frame_link: link_1
+      yaw_reference_link: link_1
+      frame_transform:
+        - [1.0, 0.0, 0.0, 0.0]
+        - [0.0, 0.0, 1.0, 0.0]
+        - [0.0, -1.0, 0.0, 0.0]
+        - [0.0, 0.0, 0.0, 1.0]
+      usable_region:
+        center_xyz: [0.0, -0.055, -0.17]
+        half_extents_xyz: [0.09, 0.026, 0.025]
+      containment_region:
+        center_xyz: [0.0, -0.015, -0.17]
+        half_extents_xyz: [0.09, 0.07, 0.025]
+      support_plane_z: -0.201
+      opening_plane:
+        point_xyz: [0.0, -0.015, -0.10]
+        outward_normal_xyz: [0.0, 0.0, 1.0]
+      allowed_support_links: [link_1]
+      forbidden_support_links: [link_2, link_3]
+      review_evidence:
+        - assets/objects/036_cabinet/46653/model_data.json
+        - assets/objects/036_cabinet/46653/mobility.urdf
+        - envs/put_object_cabinet.py
+        - if_benchmark/data/pair_validation/renders/canonical_skill/cabinet_exposed_entry_diagnostics_20260727/open_ratio060/manifest.json
+        - if_benchmark/data/pair_validation/renders/cabinet_ratio060_stapler2_seed0_success/manifest.json
+    skill:
+      entry_mode: top_down
+      approach_distance_m: 0.06
+      retreat_distance_m: 0.06
+    allow_generic_place_on: false
+
+  microwave_7167_door_open:
+    review_status: reviewed
+    acceptance_required: false
+    abandonment_reason: >-
+      Deferred after Render/URDF audit found unusable collision/support
+      geometry; excluded from the current M5 completion gate.
+    relation: place_in
+    receiver:
+      asset: 044_microwave
+      model_id: "7167"
+      category: microwave
+      inventory_id: 044_microwave|7167
+    fixture:
+      root_q0_wxyz: [0.707, 0.0, 0.0, 0.707]
+      table_xy: [-0.07, 0.175]
+      root_z: 0.8
+      source: envs/open_microwave.py
+    state:
+      state_name: door_open
+      joint_targets:
+        - joint_index: 0
+          joint_name: joint_0
+          target_ratio: 0.7
+          tolerance_ratio: 0.04
+          source: envs/open_microwave.py.check_success
+    passive_joint_properties:
+      stiffness: 200.0
+      damping: 20.0
+      force_limit: 100.0
+      friction: 1.0
+    cavity:
+      frame_link: link_3
+      yaw_reference_link: link_3
+      frame_transform:
+        - [1.0, 0.0, 0.0, 0.0]
+        - [0.0, 0.0, 1.0, 0.0]
+        - [0.0, -1.0, 0.0, 0.0]
+        - [0.0, 0.0, 0.0, 1.0]
+      usable_region:
+        center_xyz: [-0.025, -0.005, 0.0]
+        half_extents_xyz: [0.055, 0.045, 0.03]
+      support_plane_z: -0.0315
+      opening_plane:
+        point_xyz: [-0.025, -0.06, 0.0]
+        outward_normal_xyz: [0.0, -1.0, 0.0]
+      allowed_support_links: [link_3]
+      forbidden_support_links: [link_0]
+      review_evidence:
+        - assets/objects/044_microwave/7167/model_data.json
+        - assets/objects/044_microwave/7167/mobility.urdf
+        - envs/open_microwave.py
+    skill:
+      entry_mode: front_insertion
+      approach_distance_m: 0.12
+      retreat_distance_m: 0.12
+    allow_generic_place_on: false
+
+  microwave_7310_door_open:
+    review_status: reviewed
+    acceptance_required: false
+    abandonment_reason: >-
+      Deferred after Render/URDF audit found unusable collision/support
+      geometry; excluded from the current M5 completion gate.
+    relation: place_in
+    receiver:
+      asset: 044_microwave
+      model_id: "7310"
+      category: microwave
+      inventory_id: 044_microwave|7310
+    fixture:
+      root_q0_wxyz: [0.707, 0.0, 0.0, 0.707]
+      table_xy: [-0.07, 0.175]
+      root_z: 0.8
+      source: envs/open_microwave.py
+    state:
+      state_name: door_open
+      joint_targets:
+        - joint_index: 0
+          joint_name: joint_0
+          target_ratio: 0.7
+          tolerance_ratio: 0.04
+          source: envs/open_microwave.py.check_success
+    passive_joint_properties:
+      stiffness: 200.0
+      damping: 20.0
+      force_limit: 100.0
+      friction: 1.0
+    cavity:
+      frame_link: link_1
+      yaw_reference_link: link_1
+      frame_transform:
+        - [1.0, 0.0, 0.0, 0.0]
+        - [0.0, 0.0, 1.0, 0.0]
+        - [0.0, -1.0, 0.0, 0.0]
+        - [0.0, 0.0, 0.0, 1.0]
+      usable_region:
+        center_xyz: [-0.016, -0.005, 0.0]
+        half_extents_xyz: [0.052, 0.045, 0.03]
+      support_plane_z: -0.0325
+      opening_plane:
+        point_xyz: [-0.016, -0.06, 0.0]
+        outward_normal_xyz: [0.0, -1.0, 0.0]
+      allowed_support_links: [link_1]
+      forbidden_support_links: [link_0]
+      review_evidence:
+        - assets/objects/044_microwave/7310/model_data.json
+        - assets/objects/044_microwave/7310/mobility.urdf
+        - envs/open_microwave.py
+    skill:
+      entry_mode: front_insertion
+      approach_distance_m: 0.12
+      retreat_distance_m: 0.12
+    allow_generic_place_on: false

@@ -1,0 +1,17 @@
+schema_version: 1
+kind: variant_schema
+variant_schema:
+  id: pick_left_of_landmark
+  action:
+    verb: pick
+    arm: left
+  role_bindings:
+    subject: subj_left
+  descriptors:
+    subject:
+    - kind: spatial
+      predicates:
+      - left_of
+      source_role: subj_left
+      reference_role: landmark
+  params: {}

@@ -1,0 +1,25 @@
+profile_id: aloha_agilex_gripper_success_observation
+profile_version: aloha_agilex_gripper_success_observation_v1
+embodiment: aloha-agilex
+review_status: reviewed
+source:
+  embodiment_config: assets/embodiments/aloha-agilex/config.yml
+  urdf: assets/embodiments/aloha-agilex/urdf/arx5_description_isaac.urdf
+arms:
+  left:
+    articulation: left_entity
+    palm_wrist_links: [fl_link6]
+    fingers:
+      - {joint: fl_joint7, link: fl_link7, finger: left, inner_normal_local: [0, -1, 0]}
+      - {joint: fl_joint8, link: fl_link8, finger: right, inner_normal_local: [0, 1, 0]}
+  right:
+    articulation: right_entity
+    palm_wrist_links: [fr_link6]
+    fingers:
+      - {joint: fr_joint7, link: fr_link7, finger: left, inner_normal_local: [0, -1, 0]}
+      - {joint: fr_joint8, link: fr_link8, finger: right, inner_normal_local: [0, 1, 0]}
+classification:
+  engaged_max_normalized_opening: 0.85
+  inner_pad_normal_alignment_min: 0.25
+  fingertip_axis_fraction: 0.15
+  continuous_contact_min_steps: 2

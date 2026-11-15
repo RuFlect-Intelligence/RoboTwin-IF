@@ -1,0 +1,29 @@
+schema_version: 1
+kind: concrete_goal
+concrete_goal:
+  entity_keys:
+  - obj_subject
+  - obj_landmark
+  goal:
+    verb: pick
+    subject: obj_subject
+    arm: left
+    target: null
+    subject2: null
+    target2: null
+    descriptors:
+      subject:
+        attribute:
+          subtype: color
+          value: red
+        spatial:
+          predicates:
+          - left_of
+          reference: obj_landmark
+        ordinal:
+          basis: landmark
+          order: nearest
+          reference: obj_landmark
+        part:
+          region: handle
+    params: {}

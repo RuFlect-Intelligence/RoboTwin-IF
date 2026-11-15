@@ -1,0 +1,39 @@
+schema_version: 1
+kind: minimal_pair
+minimal_pair:
+  id: mp_d1a_red_blue
+  scene_spec_id: ss_rsf_d1a_color_cube_red_blue_seed7
+  realized_family_id: rsf_d1a_color_cube_red_blue
+  layout_seed: 7
+  assignment_id: ac_color_cube_red_blue_000
+  observation_id: obs_seed7
+  scene_state_hash: example_state_hash
+  from_goal_variant_id: pick_a
+  to_goal_variant_id: pick_b
+  intended_axis: D1a
+  intended_subtype: color
+  intended_dcode: D1a.color
+  actual_axes:
+  - D1a
+  actual_dcodes:
+  - D1a.color
+  unmapped_semantic_deltas: []
+  status: valid
+  source_scene_hash: scene-hash
+  source_realization_hash: realization-hash
+  from_endpoint:
+    goal_variant_id: pick_a
+    task_record_id: task_pick_a
+    task_artifact_hash: task-a-hash
+    goal_hash: goal-a-hash
+    instruction_hash: instruction-a-hash
+    checker_hash: checker-a-hash
+    style_id: style_0
+  to_endpoint:
+    goal_variant_id: pick_b
+    task_record_id: task_pick_b
+    task_artifact_hash: task-b-hash
+    goal_hash: goal-b-hash
+    instruction_hash: instruction-b-hash
+    checker_hash: checker-b-hash
+    style_id: style_0

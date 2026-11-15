@@ -1,0 +1,87 @@
+schema_version: 1
+kind: role_graph
+role_graph:
+  id: rg_d2b_directional_relation_pair
+  roles:
+  - id: subj
+    kind: manipuland
+    allowed_asset_roles:
+    - manipuland
+    descriptor_role: subject
+    cardinality: 1
+  - id: anchor
+    kind: reference_anchor
+    allowed_asset_roles:
+    - manipuland
+    - reference
+    - surface
+    - container
+    descriptor_role: target
+    cardinality: 1
+  constraints:
+  - id: c_pick_subject
+    type: use_validated
+    scope: asset
+    phase: assignment
+    roles:
+    - subj
+    params:
+      use: pick_left
+    hard: true
+  - id: c_anchor_valid
+    type: use_validated
+    scope: asset
+    phase: assignment
+    roles:
+    - anchor
+    params:
+      use: relation_anchor
+    hard: true
+  - id: c_terminal_relations
+    type: terminal_relation_supported
+    scope: semantic
+    phase: unit_build
+    roles:
+    - subj
+    - anchor
+    params:
+      relations:
+      - left_of
+      - right_of
+    hard: true
+  - id: c_not_success_at_t0
+    type: not_success_at_t0
+    scope: layout
+    phase: layout
+    roles:
+    - subj
+    - anchor
+    params:
+      relations:
+      - left_of
+      - right_of
+    hard: true
+  variant_schemas:
+  - id: place_left
+    action:
+      verb: place_left_of
+      arm: left
+      relation: left_of
+    role_bindings:
+      subject: subj
+      target: anchor
+    params: {}
+  - id: place_right
+    action:
+      verb: place_right_of
+      arm: left
+      relation: right_of
+    role_bindings:
+      subject: subj
+      target: anchor
+    params: {}
+  minimal_pair_edges:
+  - from: place_left
+    to: place_right
+    axis: D2b
+    subtype: relation

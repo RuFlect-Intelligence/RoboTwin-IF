@@ -1,0 +1,48 @@
+schema_version: 1
+layout_solver_version: 24
+embodiment: aloha-agilex
+table:
+  bounds_xy:
+    x: [-0.6, 0.6]
+    y: [-0.35, 0.35]
+  surface_z: 0.74
+workspace:
+  bounds_xy:
+    x: [-0.58, 0.58]
+    y: [-0.33, 0.33]
+camera:
+  name: head_camera
+  type: D435
+  width: 320
+  height: 240
+  fovy_deg: 37.0
+  near: 0.1
+  far: 100.0
+  position: [-0.032, -0.45, 1.35]
+  forward: [0.0, 0.6, -0.8]
+  left: [-1.0, 0.0, 0.0]
+  table_visible_polygon_xy:
+    - [-0.303932, -0.247436]
+    - [0.239932, -0.247436]
+    - [0.422136, 0.433252]
+    - [-0.486136, 0.433252]
+actor:
+  base_pose:
+    position: [0.0, -0.65, 0.0]
+    quat_wxyz: [0.707106781187, 0.0, 0.0, 0.707106781187]
+reach:
+  left:
+    x: [-0.5, 0.08]
+    y: [-0.24, 0.14]
+  right:
+    x: [-0.08, 0.5]
+    y: [-0.24, 0.14]
+margin_m: 0.02
+ordering:
+  position_gap_m: 0.1
+  distance_gap_m: 0.1
+search:
+  initial_candidate_policy: baseline
+  halton_candidates_per_unit: 192
+  max_nodes: 50000
+  max_pick_planning_layout_attempts_per_seed: 8

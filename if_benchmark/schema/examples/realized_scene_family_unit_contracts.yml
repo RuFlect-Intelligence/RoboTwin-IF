@@ -1,0 +1,384 @@
+schema_version: 1
+kind: realized_scene_family
+realized_scene_family:
+  id: rsf_unit_contracts
+  abstract_family_id: asf_unit_contracts
+  assignment_id: ac_unit_contracts
+  archetype_ids:
+  - unit_contracts
+  role_bindings:
+    subj:
+      entity_key: obj_subject
+      asset: 073_rubikscube
+      model_id: '0'
+      category: cube
+    landmark:
+      entity_key: obj_landmark
+      asset: 043_book
+      model_id: '0'
+      category: book
+    receiver:
+      entity_key: obj_receiver
+      asset: 105_bowl
+      model_id: '0'
+      category: bowl
+  templates:
+  - key: obj_subject
+    role_ref: subj
+    asset: 073_rubikscube
+    model_candidates:
+    - '0'
+    roles:
+    - manipuland
+  - key: obj_landmark
+    role_ref: landmark
+    asset: 043_book
+    model_candidates:
+    - '0'
+    roles:
+    - reference
+  - key: obj_receiver
+    role_ref: receiver
+    asset: 105_bowl
+    model_candidates:
+    - '0'
+    roles:
+    - container
+  goal_variants:
+  - id: place_left
+    schema_id: place_left
+    assignment_id: ac_unit_contracts
+    role_refs:
+      subject: subj
+      target: landmark
+    entity_refs:
+      subject: obj_subject
+      target: obj_landmark
+    intended_axes:
+    - axis: D2b
+      subtype: relation
+    goal:
+      verb: place_left_of
+      action_family: O2O
+      relation: left_of
+      subject: obj_subject
+      arm: left
+      target: obj_landmark
+      subject2: null
+      target2: null
+      descriptors: {}
+      params: {}
+    export:
+      variant: left_arm_place_left_of(obj_subject,obj_landmark)
+  unit_inputs:
+  - id: unit_input_subject
+    type: ObjectUnit
+    roles:
+    - subj
+    entity_keys:
+    - obj_subject
+    source_constraints: []
+    geometry_refs:
+      subj: 073_rubikscube|0
+    pair_preconditions: {}
+    params: {}
+  - id: unit_input_landmark_relation
+    type: LandmarkRelationUnit
+    roles:
+    - subj
+    - landmark
+    entity_keys:
+    - obj_subject
+    - obj_landmark
+    source_constraints: []
+    geometry_refs:
+      subj: 073_rubikscube|0
+      landmark: 043_book|0
+    pair_preconditions: {}
+    params:
+      landmark_role: landmark
+      predicates:
+      - left_of
+  - id: unit_input_receiver_reservation
+    type: ReceiverReservationUnit
+    roles:
+    - receiver
+    entity_keys:
+    - obj_receiver
+    source_constraints: []
+    geometry_refs:
+      receiver: 105_bowl|0
+    pair_preconditions: {}
+    params:
+      receiver_roles:
+      - receiver
+      relation: place_in
+  units:
+  - id: unit_subject
+    type: ObjectUnit
+    roles:
+    - subj
+    entity_keys:
+    - obj_subject
+    params:
+      object_key: obj_subject
+      footprint:
+        shape: rect
+        frame: unit_local
+        center_xy:
+        - 0.0
+        - 0.0
+        half_extents_xy:
+        - 0.04
+        - 0.04
+        source: example
+      anchors:
+        origin:
+        - 0.0
+        - 0.0
+        - 0.04
+        footprint_center:
+        - 0.0
+        - 0.0
+        - 0.04
+        support:
+        - 0.0
+        - 0.0
+        - 0.0
+      local_pose:
+        translation_xyz:
+        - 0.0
+        - 0.0
+        - 0.04
+        q0_wxyz:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        relative_yaw_deg: 0.0
+        placement_mode: table_resting
+      local_z_bounds:
+      - -0.04
+      - 0.04
+      geometry_evidence:
+        source: example
+  - id: unit_landmark_relation
+    type: LandmarkRelationUnit
+    roles:
+    - subj
+    - landmark
+    entity_keys:
+    - obj_subject
+    - obj_landmark
+    params:
+      landmark_key: obj_landmark
+      internal_layout:
+        obj_subject:
+          translation_xyz:
+          - -0.1
+          - 0.0
+          - 0.04
+          q0_wxyz:
+          - 1.0
+          - 0.0
+          - 0.0
+          - 0.0
+          relative_yaw_deg: 0.0
+          placement_mode: table_resting
+        obj_landmark:
+          translation_xyz:
+          - 0.0
+          - 0.0
+          - 0.04
+          q0_wxyz:
+          - 1.0
+          - 0.0
+          - 0.0
+          - 0.0
+          relative_yaw_deg: 0.0
+          placement_mode: table_resting
+      member_footprints:
+        obj_subject:
+          shape: rect
+          frame: unit_local
+          center_xy:
+          - -0.1
+          - 0.0
+          half_extents_xy:
+          - 0.04
+          - 0.04
+          source: example
+        obj_landmark:
+          shape: rect
+          frame: unit_local
+          center_xy:
+          - 0.0
+          - 0.0
+          half_extents_xy:
+          - 0.04
+          - 0.04
+          source: example
+      member_z_bounds:
+        obj_subject:
+        - -0.04
+        - 0.04
+        obj_landmark:
+        - -0.04
+        - 0.04
+      footprint:
+        shape: rect
+        frame: unit_local
+        center_xy:
+        - -0.05
+        - 0.0
+        half_extents_xy:
+        - 0.09
+        - 0.04
+        source: example
+      anchors:
+        obj_subject:origin:
+        - -0.1
+        - 0.0
+        - 0.04
+        obj_subject:support:
+        - -0.1
+        - 0.0
+        - 0.0
+        obj_landmark:origin:
+        - 0.0
+        - 0.0
+        - 0.04
+        obj_landmark:support:
+        - 0.0
+        - 0.0
+        - 0.0
+      guaranteed_facts:
+      - predicate: spatial
+        subject: obj_subject
+        relation: left_of
+        reference: obj_landmark
+        source_constraint_ids: []
+      geometry_evidence:
+        obj_subject:
+          source: example
+        obj_landmark:
+          source: example
+      pair_evidence: []
+  - id: unit_receiver_reservation
+    type: ReceiverReservationUnit
+    roles:
+    - receiver
+    entity_keys:
+    - obj_receiver
+    params:
+      receiver_keys:
+      - obj_receiver
+      subject_keys:
+      - obj_subject
+      relations:
+      - in
+      receiver_layout:
+        obj_receiver:
+          translation_xyz:
+          - 0.0
+          - 0.0
+          - 0.04
+          q0_wxyz:
+          - 1.0
+          - 0.0
+          - 0.0
+          - 0.0
+          relative_yaw_deg: 0.0
+          placement_mode: table_resting
+      receiver_footprints:
+        obj_receiver:
+          shape: rect
+          frame: unit_local
+          center_xy:
+          - 0.0
+          - 0.0
+          half_extents_xy:
+          - 0.09
+          - 0.09
+          source: example
+      receiver_z_bounds:
+        obj_receiver:
+        - -0.04
+        - 0.04
+      reserved_regions:
+      - id: region_subject_in_receiver
+        relation: in
+        subject_key: obj_subject
+        receiver_keys:
+        - obj_receiver
+        footprint:
+          shape: rect
+          frame: unit_local
+          center_xy:
+          - 0.0
+          - 0.0
+          half_extents_xy:
+          - 0.04
+          - 0.04
+          source: example
+        support_clearance_m: 0.002
+        terminal_clearance_m: 0.03
+        placement_recipe:
+          clearance_m: 0.03
+          yaw_convention: subject_yaw_minus_receiver_yaw
+          settle_policy: m5_terminal_settle_v11_proportional_asset_mass_inertia
+        placement_recipe_source: frozen_m5_projection
+        pair_evidence_ids:
+        - pair_example
+        relative_yaw_deg: 0.0
+        usable_region:
+          x: 0.12
+          y: 0.12
+          factor: 0.7
+          edge_clearance_m: 0.015
+          solver_policy_hash: example
+      footprint:
+        shape: rect
+        frame: unit_local
+        center_xy:
+        - 0.0
+        - 0.0
+        half_extents_xy:
+        - 0.09
+        - 0.09
+        source: example
+      anchors:
+        obj_receiver:origin:
+        - 0.0
+        - 0.0
+        - 0.04
+        obj_receiver:support:
+        - 0.0
+        - 0.0
+        - 0.0
+      guaranteed_facts:
+      - predicate: terminal_region
+        subject: obj_subject
+        relation: in
+        receivers:
+        - obj_receiver
+        region_id: region_subject_in_receiver
+        source_constraint_ids: []
+      geometry_evidence:
+        obj_receiver:
+          source: example
+      subject_geometry_evidence:
+        obj_subject:
+          source: example
+      subject_z_bounds:
+        obj_subject:
+        - -0.04
+        - 0.04
+      pair_evidence:
+      - evidence_id: pair_example
+        pair_key: example
+  layout_constraints: []
+  minimal_pair_edges: []
+  evidence:
+    purpose: Milestone 6 unit contract coverage
+  export: {}

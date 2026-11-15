@@ -1,0 +1,248 @@
+schema_version: 1
+kind: realized_scene_family
+realized_scene_family:
+  id: rsf_d1a_color_cube_red_blue
+  abstract_family_id: asf_d1a_color_subject_pair
+  assignment_id: ac_color_cube_red_blue_000
+  archetype_ids:
+  - attribute_subject_pair
+  role_bindings:
+    subj_a:
+      entity_key: obj_a
+      asset: 073_rubikscube
+      model_id: '0'
+      category: cube
+    subj_b:
+      entity_key: obj_b
+      asset: 073_rubikscube
+      model_id: '1'
+      category: cube
+  templates:
+  - key: obj_a
+    role_ref: subj_a
+    asset: 073_rubikscube
+    model_candidates:
+    - '0'
+    roles:
+    - manipuland
+  - key: obj_b
+    role_ref: subj_b
+    asset: 073_rubikscube
+    model_candidates:
+    - '1'
+    roles:
+    - manipuland
+  goal_variants:
+  - id: pick_a
+    schema_id: pick_a
+    assignment_id: ac_color_cube_red_blue_000
+    role_refs:
+      subject: subj_a
+    entity_refs:
+      subject: obj_a
+    intended_axes:
+    - axis: D1a
+      subtype: color
+    goal:
+      verb: pick
+      subject: obj_a
+      arm: left
+      target: null
+      subject2: null
+      target2: null
+      descriptors:
+        subject:
+          attribute:
+            subtype: color
+            value: red
+      params: {}
+    export:
+      variant: left_arm_pick(obj_a)|desc=subject.attribute=color:red
+  - id: pick_b
+    schema_id: pick_b
+    assignment_id: ac_color_cube_red_blue_000
+    role_refs:
+      subject: subj_b
+    entity_refs:
+      subject: obj_b
+    intended_axes:
+    - axis: D1a
+      subtype: color
+    goal:
+      verb: pick
+      subject: obj_b
+      arm: left
+      target: null
+      subject2: null
+      target2: null
+      descriptors:
+        subject:
+          attribute:
+            subtype: color
+            value: blue
+      params: {}
+    export:
+      variant: left_arm_pick(obj_b)|desc=subject.attribute=color:blue
+  unit_inputs:
+  - id: unit_input_obj_a
+    type: ObjectUnit
+    roles:
+    - subj_a
+    entity_keys:
+    - obj_a
+    source_constraints:
+    - c_layout_obj_a_reach
+    geometry_refs:
+      subj_a: 073_rubikscube|0
+    pair_preconditions: {}
+    params: {}
+  - id: unit_input_obj_b
+    type: ObjectUnit
+    roles:
+    - subj_b
+    entity_keys:
+    - obj_b
+    source_constraints:
+    - c_layout_obj_b_reach
+    geometry_refs:
+      subj_b: 073_rubikscube|1
+    pair_preconditions: {}
+    params: {}
+  units:
+  - id: unit_obj_a
+    type: ObjectUnit
+    roles:
+    - subj_a
+    entity_keys:
+    - obj_a
+    params:
+      object_key: obj_a
+      footprint:
+        shape: rect
+        frame: unit_local
+        center_xy:
+        - 0.0
+        - 0.0
+        half_extents_xy:
+        - 0.04
+        - 0.04
+        source: example
+      anchors:
+        origin:
+        - 0.0
+        - 0.0
+        - 0.04
+        footprint_center:
+        - 0.0
+        - 0.0
+        - 0.04
+        support:
+        - 0.0
+        - 0.0
+        - 0.0
+      local_pose:
+        translation_xyz:
+        - 0.0
+        - 0.0
+        - 0.04
+        q0_wxyz:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        relative_yaw_deg: 0.0
+        placement_mode: table_resting
+      local_z_bounds:
+      - -0.04
+      - 0.04
+      geometry_evidence:
+        source: example
+  - id: unit_obj_b
+    type: ObjectUnit
+    roles:
+    - subj_b
+    entity_keys:
+    - obj_b
+    params:
+      object_key: obj_b
+      footprint:
+        shape: rect
+        frame: unit_local
+        center_xy:
+        - 0.0
+        - 0.0
+        half_extents_xy:
+        - 0.04
+        - 0.04
+        source: example
+      anchors:
+        origin:
+        - 0.0
+        - 0.0
+        - 0.04
+        footprint_center:
+        - 0.0
+        - 0.0
+        - 0.04
+        support:
+        - 0.0
+        - 0.0
+        - 0.0
+      local_pose:
+        translation_xyz:
+        - 0.0
+        - 0.0
+        - 0.04
+        q0_wxyz:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        relative_yaw_deg: 0.0
+        placement_mode: table_resting
+      local_z_bounds:
+      - -0.04
+      - 0.04
+      geometry_evidence:
+        source: example
+  layout_constraints:
+  - id: c_layout_obj_a_reach
+    type: reach_zone
+    scope: layout
+    phase: layout
+    roles:
+    - subj_a
+    params:
+      allowed:
+      - left_only
+      - both
+    hard: true
+  - id: c_layout_obj_b_reach
+    type: reach_zone
+    scope: layout
+    phase: layout
+    roles:
+    - subj_b
+    params:
+      allowed:
+      - left_only
+      - both
+    hard: true
+  minimal_pair_edges:
+  - from: pick_a
+    to: pick_b
+    axis: D1a
+    subtype: color
+  evidence:
+    assignment_candidate: ac_color_cube_red_blue_000
+    constraints_satisfied:
+    - c_same_category
+    - c_unique_a
+    - c_unique_b
+    - c_pick_a
+    - c_pick_b
+  export:
+    legacy_scene_family:
+      variants_field:
+      - left_arm_pick(obj_a)|desc=subject.attribute=color:red
+      - left_arm_pick(obj_b)|desc=subject.attribute=color:blue

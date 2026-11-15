@@ -1,0 +1,9 @@
+schema_version: 1
+kind: axis_plan
+axis_plan:
+- axis: D4
+  subtype: arm
+  role: subject
+  values:
+  - left
+  - right

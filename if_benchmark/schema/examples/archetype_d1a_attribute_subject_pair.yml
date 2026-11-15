@@ -1,0 +1,126 @@
+schema_version: 1
+kind: archetype
+archetype:
+  id: attribute_subject_pair
+  roles:
+  - id: subj_a
+    kind: manipuland
+    allowed_asset_roles:
+    - manipuland
+    descriptor_role: subject
+    cardinality: 1
+  - id: subj_b
+    kind: manipuland
+    allowed_asset_roles:
+    - manipuland
+    descriptor_role: subject
+    cardinality: 1
+  constraints:
+  - id: c_same_category
+    type: same_category
+    scope: semantic
+    phase: assignment
+    roles:
+    - subj_a
+    - subj_b
+    params: {}
+    hard: true
+  - id: c_distinct_subjects
+    type: distinct_entity
+    scope: semantic
+    phase: assignment
+    roles:
+    - subj_a
+    - subj_b
+    params: {}
+    hard: true
+  - id: c_attr_a
+    type: reviewed_attribute
+    scope: asset
+    phase: assignment
+    roles:
+    - subj_a
+    params:
+      kind: color
+    hard: true
+  - id: c_attr_b
+    type: reviewed_attribute
+    scope: asset
+    phase: assignment
+    roles:
+    - subj_b
+    params:
+      kind: color
+    hard: true
+  - id: c_unique_a
+    type: unique_descriptor
+    scope: semantic
+    phase: assignment
+    roles:
+    - subj_a
+    params:
+      kind: color
+      peers:
+      - subj_a
+      - subj_b
+    hard: true
+  - id: c_unique_b
+    type: unique_descriptor
+    scope: semantic
+    phase: assignment
+    roles:
+    - subj_b
+    params:
+      kind: color
+      peers:
+      - subj_a
+      - subj_b
+    hard: true
+  - id: c_pick_a
+    type: use_validated
+    scope: asset
+    phase: assignment
+    roles:
+    - subj_a
+    params:
+      use: pick_left
+    hard: true
+  - id: c_pick_b
+    type: use_validated
+    scope: asset
+    phase: assignment
+    roles:
+    - subj_b
+    params:
+      use: pick_left
+    hard: true
+  variant_schemas:
+  - id: pick_a
+    action:
+      verb: pick
+      arm: left
+    role_bindings:
+      subject: subj_a
+    descriptors:
+      subject:
+      - kind: attribute
+        subtype: color
+        source_role: subj_a
+    params: {}
+  - id: pick_b
+    action:
+      verb: pick
+      arm: left
+    role_bindings:
+      subject: subj_b
+    descriptors:
+      subject:
+      - kind: attribute
+        subtype: color
+        source_role: subj_b
+    params: {}
+  minimal_pair_edges:
+  - from: pick_a
+    to: pick_b
+    axis: D1a
+    subtype: color

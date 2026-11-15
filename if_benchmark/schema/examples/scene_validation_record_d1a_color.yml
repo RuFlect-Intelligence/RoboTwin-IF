@@ -1,0 +1,73 @@
+schema_version: 1
+kind: scene_validation_record
+scene_validation_record:
+  artifact_kind: scene_validation_record
+  schema_version: 1
+scene_validation_version: 9
+  id: svr_d1a_color
+  scene_spec_id: ss_rsf_d1a_color_cube_red_blue_seed7
+  realized_family_id: rsf_d1a_color_cube_red_blue
+  source_scene_hash: scene-hash
+  source_realization_hash: realization-hash
+  source_unit_hash: unit-hash
+  plan_hash: plan-hash
+  config_hash: validation-config-hash
+  contract_id: benchmarkv1_shared_success_contract
+  success_contract_version: benchmarkv1_success_contract_v1
+  success_contract_hash: success-contract-hash
+  calibration_only: true
+  publication_ready: false
+  descriptor_gate:
+    status: passed
+    passed: true
+    render_count: 1
+    frame_hash: frame-hash
+    entity_metrics: {}
+    visible_entities:
+      obj_a: true
+      obj_b: true
+    checks: []
+    failures: []
+  not_success_at_t0:
+    passed: true
+    task_count: 1
+  infrastructure_failure: false
+  source_failure: false
+  internal_failure: false
+  task_results:
+  - task_record_id: task_d1a_pick_red
+    goal_variant_id: pick_a
+    source_task_hash: task-hash
+    validated: true
+    excluded: false
+    success_count: 2
+    denominator: 3
+    minimum_success_count: 2
+    success_rate: 0.6666666666666666
+    classification_counts:
+      failure: 1
+      intended: 2
+    t0_false: true
+    contract_id: benchmarkv1_shared_success_contract
+    success_contract_version: benchmarkv1_success_contract_v1
+    success_contract_hash: success-contract-hash
+    success_snapshot_hashes:
+    - success-snapshot-seed-0
+    - success-snapshot-seed-1
+    - success-snapshot-seed-2
+    infrastructure_failure_count: 0
+    source_failure_count: 0
+    internal_failure_count: 0
+    attempts: []
+  summary:
+    task_count: 1
+    validated_task_count: 1
+    excluded_task_count: 0
+  provenance:
+    generator: if_benchmark.scene_validation.freeze
+    config_hash: validation-config-hash
+    sources:
+    - kind: scene_spec
+      hash: scene-hash
+      record_id: ss_rsf_d1a_color_cube_red_blue_seed7
+  artifact_hash: record-hash

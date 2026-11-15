@@ -1,0 +1,28 @@
+schema_version: 1
+kind: goal_variant
+goal_variant:
+  id: pick_a
+  schema_id: pick_a
+  assignment_id: ac_color_cube_red_blue_000
+  role_refs:
+    subject: subj_a
+  entity_refs:
+    subject: obj_a
+  intended_axes:
+  - axis: D1a
+    subtype: color
+  goal:
+    verb: pick
+    subject: obj_a
+    arm: left
+    target: null
+    subject2: null
+    target2: null
+    descriptors:
+      subject:
+        attribute:
+          subtype: color
+          value: red
+    params: {}
+  export:
+    variant: left_arm_pick(obj_a)|desc=subject.attribute=color:red

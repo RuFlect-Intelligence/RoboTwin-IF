@@ -1,0 +1,94 @@
+contract_id: benchmarkv1_shared_success_contract
+success_contract_version: benchmarkv1_success_contract_v1
+snapshot_version: benchmarkv1_success_snapshot_v1
+predicate_registry_version: benchmarkv1_success_predicates_v1
+
+active_contact:
+  impulse_epsilon: 1.0e-6
+
+stability:
+  minimum_settle_steps: 600
+  observation_window_steps: 200
+  maximum_settle_steps: 1600
+  translation_drift_m: 0.004
+  rotation_drift_deg: 3.0
+
+hold:
+  pick_certification_observation_steps: 20
+  pick_relative_translation_drift_exclusive_max_m: 0.02
+  pick_relative_rotation_constraint_enabled: false
+  pick_post_close_attachment: fixed_constraint
+  pick_attachment_drive_stiffness: 5000.0
+  pick_attachment_drive_damping: 150.0
+  pick_attachment_residual_translation_exclusive_max_m: 0.02
+  pick_attachment_rotation_constraint_enabled: false
+  relative_translation_drift_m: 0.003
+  relative_rotation_drift_deg: 3.0
+  pick_support_clearance_m: 0.04
+  reviewed_symmetry_axes:
+    001_bottle: y
+    093_brush-pen: z
+
+articulation:
+  minimum_signed_normalized_progress: 0.15
+  default_positive_use: switch_off
+  target_intervals:
+    open: [0.75, 1.0]
+    close: [0.0, 0.25]
+    binary_positive: [0.65, 1.0]
+    binary_negative: [0.0, 0.35]
+
+relation:
+  contract_version: relation_success_contract_v1
+  anchors:
+    directional: {subject: collision_aabb_center, receiver: collision_aabb_center}
+    distance: {subject: collision_aabb_center, receiver: collision_aabb_center}
+    between: {subject: collision_aabb_center, receiver: anchor_pair_segment}
+    in: {subject: collision_aabb, receiver: collision_aabb}
+    "on": {subject: collision_aabb, receiver: collision_aabb_top}
+    stack: {subject: collision_aabb, receiver: collision_aabb_top}
+  boundary_rules:
+    distance_band_inclusive: true
+    directional_boundary_inclusive: false
+    containment_tolerance_inclusive: true
+    support_tolerance_inclusive: true
+  requirements:
+    in: {contact: subject_receiver, no_table_contact: true, stability: participating_entities}
+    "on": {contact: subject_receiver, no_table_contact: true, stability: participating_entities}
+    stack: {contact: subject_receiver, no_table_contact: true, stability: participating_entities}
+    directional: {stability: participating_entities}
+    distance: {stability: participating_entities}
+  distance_bands_m:
+    next_to: [0.06, 0.16]
+    left_of: [0.04, 0.18]
+    right_of: [0.04, 0.18]
+    in_front_of: [0.04, 0.18]
+    behind: [0.04, 0.18]
+    left_of_pair: [0.04, 0.18]
+    right_of_pair: [0.04, 0.18]
+  direction_axis_margin_m: 0.0
+  between_maximum_perpendicular_m: 0.08
+  containment:
+    depth_split_m: 0.03
+    depth_tolerance_m: 0.002
+    center_rim_tolerance_m: 0.002
+    xy_outside_tolerance_m: 0.005
+  support:
+    on_minimum_xy_limit_m: 0.025
+    on_receiver_footprint_fraction: 0.35
+    stack_minimum_xy_limit_m: 0.025
+    stack_receiver_footprint_fraction: 0.20
+
+click_press:
+  minimum_contact_tolerance_m: 0.012
+  maximum_contact_tolerance_m: 0.02
+  target_extent_fraction: 0.15
+  maximum_subject_displacement_m: 0.03
+
+orientation:
+  maximum_error_deg: 5.0
+  maximum_xy_drift_m: 0.03
+  release_clearance_m: 0.008
+
+d4:
+  composition_version: primary_execution_arm_gate_v1

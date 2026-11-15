@@ -1,0 +1,7 @@
+/assets/
+/panel/
+/SHA256SUMS
+/runs/
+/.venv/
+__pycache__/
+*.pyc
